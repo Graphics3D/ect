@@ -19,14 +19,13 @@ import javax.imageio.ImageIO;
 public class TestBalleCouleur001 extends TestObjet {
 
     public int MAXFRAMES = 2000;
-    private TColor tc = new TColor(Color.red);
     private BalleClous2 ballec;
     private Point3D[] s;
-    public int N = 2;
+    public int N = 10;
     public int Ncolors = 6;
     private Point3D[] v;
-    private double V = 0.03;
-    private double D = 1;
+    private double V = 0.08;
+    private double D = 0.01;
     private HashMap<Point2D, Color> map = new HashMap<Point2D, Color>();
 
     @Override
@@ -34,12 +33,12 @@ public class TestBalleCouleur001 extends TestObjet {
         LumierePonctuelle lumierePonctuelle = new LumierePonctuelle(Point3D.X, Color.RED);
         lumierePonctuelle.setR0(1);
 
-        scene().lumieres().add(lumierePonctuelle);
+        //scene().lumieres().add(lumierePonctuelle);
 
         lumierePonctuelle = new LumierePonctuelle(Point3D.Y, Color.BLUE);
         lumierePonctuelle.setR0(1);
 
-        scene().lumieres().add(lumierePonctuelle);
+        //scene().lumieres().add(lumierePonctuelle);
         for (int c = 0; c < Ncolors; c++) {
             map.put(new Point2D(Math.random() * 100, Math.random() * 100), new Color((float) Math.random(), (float) Math.random(), (float) Math.random(), (float) Math.random()));
         }
@@ -50,17 +49,19 @@ public class TestBalleCouleur001 extends TestObjet {
 
             s[i] = new Point3D(Point3D.O0);
 
-            s[i].texture();
-
             v[i] = new Point3D(Math.random() * (V / 2 - V), Math.random() * (V / 2 - V), Math.random() * (V / 2 - V));
 
         }
-        tc
-                = new TColor(
-                        Color.YELLOW);
+        
 
         ballec = new BalleClous2(Point3D.O0, 1);
 
+        ballec.setMaxX(100);
+        ballec.setMaxY(100);
+        
+        ballec.param(D);
+        
+        
         ballec.texture(new TextureTache(map));
 
         scene().add(ballec);
@@ -68,7 +69,7 @@ public class TestBalleCouleur001 extends TestObjet {
         scene().lumieres().add(new LumierePonctuelle(Point3D.O0, Color.BLUE));
 
         Camera camera;
-        camera = new Camera(new Point3D(0d, 0d, 0d),
+        camera = new Camera(new Point3D(0d, 0d, -2d),
                 new Point3D(0d, 0d, 100d));
 
         scene().cameraActive(camera);
@@ -127,7 +128,7 @@ public class TestBalleCouleur001 extends TestObjet {
 
             ballec.addPoint(new Point2D(s[j].getX(), s[j].getY()));
 
-            ballec.position().rotation = ballec.position().rotation.mult(matrix1(totalA, totalB));
+            //ballec.position().rotation = ballec.position().rotation.mult(matrix1(totalA, totalB));
 
         }
 
@@ -138,9 +139,9 @@ public class TestBalleCouleur001 extends TestObjet {
 
         th.loop(true);
 
-        th.setResx(1920);
+        th.setResx(400);
 
-        th.setResy(1080);
+        th.setResy(300);
 
         th.MAXFRAMES = 4000;
 
