@@ -3,14 +3,8 @@ package ballecouleur;
 import balleclou.*;
 import info.emptycanvas.library.object.*;
 import info.emptycanvas.library.testing.TestObjet;
-import info.emptycanvas.library.tribase.TRISphere;
 import java.awt.Color;
-import java.io.File;
-import java.io.IOException;
 import java.util.HashMap;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.imageio.ImageIO;
 
 /**
  *
@@ -25,7 +19,7 @@ public class TestBalleCouleur001 extends TestObjet {
     public int Ncolors = 6;
     private Point3D[] v;
     private double V = 0.08;
-    private double D = 0.01;
+    private double D = 0.02;
     private HashMap<Point2D, Color> map = new HashMap<Point2D, Color>();
 
     @Override
@@ -69,7 +63,7 @@ public class TestBalleCouleur001 extends TestObjet {
         scene().lumieres().add(new LumierePonctuelle(Point3D.O0, Color.BLUE));
 
         Camera camera;
-        camera = new Camera(new Point3D(0d, 0d, -2d),
+        camera = new Camera(new Point3D(0d, 0d, -0.5d),
                 new Point3D(0d, 0d, 100d));
 
         scene().cameraActive(camera);
