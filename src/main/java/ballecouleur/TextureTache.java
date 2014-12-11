@@ -40,7 +40,7 @@ public class TextureTache extends ImageTexture {
 
     @Override
     public Color getMaillageTexturedColor(int numQuadX, int numQuadY, double x, double y) {
-        return calculerCouleur(x, y).getRGB();
+        return calculerCouleur(x, y);
     }
 
     public Color calculerCouleur(double x, double y) {
