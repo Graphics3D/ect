@@ -41,6 +41,16 @@ public class TextureTache extends TColor {
 
     @Override
     public Color getMaillageTRIColor(int numQuadX, int numQuadY, double x, double y, double r11, double r12, int numTRI) {
+        return calculerCouleur(x, y);
+    }
+
+    @Override
+    public int getColorAt(double a, double b) {
+        return calculerCouleur(a, b).getRGB();
+    }
+    
+    public Color calculerCouleur(double x, double y)
+    {
         final Point2D pData = new Point2D(x, y);
         actu = new Color(0f, 0f, 0f);
         
