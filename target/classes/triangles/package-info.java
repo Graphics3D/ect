@@ -1,0 +1,8 @@
+/**
+ * 
+ */
+/**
+ * @author Manuel
+ *
+ */
+package triangles;
