@@ -19,7 +19,8 @@ public class TestBalleCouleur001 extends TestObjet {
     public int Ncolors = 6;
     private Point3D[] v;
     private double V = 0.08;
-    private double D = 0.02;
+    private double D = 1.0;
+    private double ballecparam = 0.02;
     private HashMap<Point2D, Color> map = new HashMap<Point2D, Color>();
 
     @Override
@@ -53,7 +54,7 @@ public class TestBalleCouleur001 extends TestObjet {
         ballec.setMaxX(100);
         ballec.setMaxY(100);
         
-        ballec.param(D);
+        ballec.param(ballecparam);
         
         
         ballec.texture(new TextureTache(map));
