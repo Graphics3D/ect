@@ -28,12 +28,12 @@ public class TestBalleCouleur001 extends TestObjet {
         LumierePonctuelle lumierePonctuelle = new LumierePonctuelle(Point3D.X, Color.RED);
         lumierePonctuelle.setR0(1);
 
-        //scene().lumieres().add(lumierePonctuelle);
+        scene().lumieres().add(lumierePonctuelle);
 
         lumierePonctuelle = new LumierePonctuelle(Point3D.Y, Color.BLUE);
         lumierePonctuelle.setR0(1);
 
-        //scene().lumieres().add(lumierePonctuelle);
+        scene().lumieres().add(lumierePonctuelle);
         for (int c = 0; c < Ncolors; c++) {
             map.put(new Point2D(Math.random() * 100, Math.random() * 100), new Color((float) Math.random(), (float) Math.random(), (float) Math.random(), (float) Math.random()));
         }
@@ -138,8 +138,7 @@ public class TestBalleCouleur001 extends TestObjet {
 
         th.setResy(300);
 
-        th.MAXFRAMES = 4000;
-
+        
         th.setGenerate(TestBalleClous1111.GENERATE_IMAGE);
 
         th.run();
