@@ -169,7 +169,7 @@
 	 <dependency>
 	  <groupId>be.ibiiztera</groupId>
 	  <artifactId>emptycanvas</artifactId>
-	  <version>2014-11-010</version>
+	  <version>2014-2XMAX</version>
 	  <type>jar</type>
 	 </dependency>
 	</dependencies>
