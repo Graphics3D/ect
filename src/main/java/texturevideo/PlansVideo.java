@@ -7,16 +7,16 @@ import java.io.File;
 
 /**
  *
- * @author Se7en
+ * @author Dahmen Manuel
  */
 public class PlansVideo extends TestObjet
 {
-    private File avi1;
-    private File avi2;
-    private File avi3;
-    private File avi4;
+    private final String avi1;
+    private final String avi2;
+    private final String avi3;
+    private final String avi4;
 
-    public PlansVideo(File avi1, File avi2, File avi3, File avi4) {
+    public PlansVideo(String avi1, String avi2, String avi3, String avi4) {
         this.avi1 = avi1;
         this.avi2 = avi2;
         this.avi3 = avi3;
@@ -26,12 +26,12 @@ public class PlansVideo extends TestObjet
     @Override
     public void testScene() throws Exception {
         
-        TColor tc1, tc2, tc3, tc4;
+        VideoTexture tc1, tc2, tc3, tc4;
         
-        tc1 = new TColor(avi1);
-        tc2 = new TColor(avi1);
-        tc3 = new TColor(avi1);
-        tc4 = new TColor(avi1);
+        tc1 = new VideoTexture(avi1);
+        tc2 = new VideoTexture(avi1);
+        tc3 = new VideoTexture(avi1);
+        tc4 = new VideoTexture(avi1);
         
         Plan3D p1, p2, p3, p4;
         
@@ -77,21 +77,26 @@ public class PlansVideo extends TestObjet
     }
     public static void main(String [] args)
     {
-        File f1,f2,f3,f4;
-        f1 = new File(args[0]);
-        f2 = new File(args[1]);
-        f3 = new File(args[2]);
-        f4 = new File(args[3]);
+       String f1 = args[0];
+       String f2 = args[1];
+       String f3 = args[2];
+       String f4 = args[3];
         
-        if(f1.isFile()&&f2.isFile()&&f3.isFile()&&f4.isFile())
+        if(new File(f1).isFile()&&new File(f2).isFile()&&new File(f3).isFile()&&new File(f4).isFile())
         {
         
-        PlansVideo pc = new PlansVideo(f1, f2, f3, f4);
+            PlansVideo pc = new PlansVideo(f1, f2, f3, f4);
         
-        pc.loop(true);
+            pc.loop(true);
         
-        pc.run();
+            pc.run();
         
+        }
+        else
+        {
+            
+            System.err.println("Erreur un fichier ou l'autre n'existe pas");
+            
         }
     }
 }

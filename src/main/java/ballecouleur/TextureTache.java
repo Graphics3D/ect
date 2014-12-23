@@ -8,6 +8,7 @@
  */
 package ballecouleur;
 
+import info.emptycanvas.library.object.ECBufferedImage;
 import info.emptycanvas.library.object.ImageTexture;
 import info.emptycanvas.library.object.Point2D;
 import java.awt.Color;
@@ -23,6 +24,7 @@ public class TextureTache extends ImageTexture {
     private final HashMap<Point2D, Color> map;
 
     public TextureTache(HashMap<Point2D, Color> colors) {
+        super(new ECBufferedImage(100,100, ECBufferedImage.TYPE_INT_ARGB));
         map = colors;
     }
 
