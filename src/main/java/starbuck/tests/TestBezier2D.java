@@ -30,7 +30,7 @@ public class TestBezier2D extends TestObjet {
 /* Ancienne technique, couteuse en temps et espace m�moire */
 		
 		try {
-			bc2.setColor(new TColor(new ECBufferedImage(ImageIO.read(getClass()
+			bc2.texture(new ImageTexture(new ECBufferedImage(ImageIO.read(getClass()
 					.getResourceAsStream("texture-bezier.jpg")))));
 		} catch (IOException e) {
 			e.printStackTrace();

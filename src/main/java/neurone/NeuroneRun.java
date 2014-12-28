@@ -52,13 +52,13 @@ Neurone [] neurones ;
             {
                 Point3D p0 = (Point3D) neurones[x*10+y].objet;
                 
-                p0.setC(Color.WHITE);
+                p0.texture(new ColorTexture(Color.WHITE));
                 
                 O = O.plus(p0);
                 
                 TRISphere s = new TRISphere(p0, 1);
                 
-                s.texture(new TColor(Color.WHITE));
+                s.texture(new ColorTexture(Color.WHITE));
                 
                 scene().add(s);
                 

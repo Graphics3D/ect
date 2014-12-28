@@ -17,7 +17,7 @@ public class TestCubeTournant extends TestObjet {
 
 		scene().clear();
 
-		Cube cube = new Cube(D, Point3D.O0, Color.GREEN);
+		Cube cube = new Cube(D, Point3D.O0, new ColorTexture(Color.GREEN));
 		
 		scene().lumieres().add(new LumierePointSimple(Color.YELLOW, Point3D.O0, 1.0));
 		

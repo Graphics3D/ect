@@ -21,27 +21,27 @@ public class TestPortrait extends TestObjet {
     @Override
     public void testScene() throws Exception {
 
-        Cube c1 = new Cube(2.0, new Point3D(0, 0, 0), Color.red);
+        Cube c1 = new Cube(2.0, new Point3D(0, 0, 0), new ColorTexture(Color.red));
 
-        Cube c2 = new Cube(1.5, new Point3D(1, 1, 0), Color.yellow);
+        Cube c2 = new Cube(1.5, new Point3D(1, 1, 0), new ColorTexture(Color.yellow));
 
-        Cube cy1 = new Cube(0.5, new Point3D(2.1, 0, 0), Color.green);
-        Cube cy2 = new Cube(0.5, new Point3D(2.1, 1, 1), Color.green);
+        Cube cy1 = new Cube(0.5, new Point3D(2.1, 0, 0),new ColorTexture( Color.green));
+        Cube cy2 = new Cube(0.5, new Point3D(2.1, 1, 1),new ColorTexture( Color.green));
 
-        Cube c3 = new Cube(1, new Point3D(2, 2, 0), Color.blue);
+        Cube c3 = new Cube(1, new Point3D(2, 2, 0), new ColorTexture(Color.blue));
 
         TRISphere ts = new TRISphere(new Point3D(0,6,-5), 4);
         
-        ts.texture(new TColor(Color.WHITE));
+        ts.texture(new ColorTexture(Color.WHITE));
         
         scene().add(ts);
 
         Camera c = new Camera(new Point3D(10, 10, 10), Point3D.O0);
 
-        scene().add(new SegmentDroite(Point3D.O0, Point3D.X.mult(10), Color.RED));
-        scene().add(new SegmentDroite(Point3D.O0, Point3D.Y.mult(10), Color.GREEN));
-        scene().add(new SegmentDroite(Point3D.O0, Point3D.Z.mult(10), Color.BLUE));
-        scene().add(new TRI(new Point3D(3.1, 3, -1), new Point3D(3.1, 1, -1), new Point3D(3.1, 3, 1), Color.red));
+        scene().add(new SegmentDroite(Point3D.O0, Point3D.X.mult(10), new ColorTexture(Color.RED)));
+        scene().add(new SegmentDroite(Point3D.O0, Point3D.Y.mult(10), new ColorTexture(Color.GREEN)));
+        scene().add(new SegmentDroite(Point3D.O0, Point3D.Z.mult(10), new ColorTexture(Color.BLUE)));
+        scene().add(new TRI(new Point3D(3.1, 3, -1), new Point3D(3.1, 1, -1), new Point3D(3.1, 3, 1), new ColorTexture(Color.red)));
 
         scene().add(c1);
         scene().add(c2);

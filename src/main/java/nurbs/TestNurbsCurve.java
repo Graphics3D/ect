@@ -11,6 +11,7 @@ Global license :
 package nurbs;
 
 import info.emptycanvas.library.nurbs.NurbsCurve;
+import info.emptycanvas.library.object.ColorTexture;
 import info.emptycanvas.library.object.Point3D;
 import info.emptycanvas.library.object.SegmentDroite;
 import info.emptycanvas.library.testing.TestObjet;
@@ -55,9 +56,9 @@ class TestNurbsCurve extends TestObjet
       scene().cameraActive().setCamera(Point3D.Z.mult(-5));
       
       
-      scene().add(new SegmentDroite(Point3D.O0, Point3D.X, Color.RED));
-      scene().add(new SegmentDroite(Point3D.O0, Point3D.Y, Color.GREEN));
-      scene().add(new SegmentDroite(Point3D.O0, Point3D.Z, Color.BLUE));
+      scene().add(new SegmentDroite(Point3D.O0, Point3D.X, new ColorTexture(Color.RED)));
+      scene().add(new SegmentDroite(Point3D.O0, Point3D.Y, new ColorTexture(Color.GREEN)));
+      scene().add(new SegmentDroite(Point3D.O0, Point3D.Z, new ColorTexture(Color.BLUE)));
   }
   
     public static void main(String [] args)

@@ -13,7 +13,7 @@ public class TestCamera extends TestObjet {
     public void ginit() {
         super.ginit();
         Cube c = new Cube(2, Point3D.O0);
-        c.setCouleur(Color.RED);
+        c.texture(new ColorTexture(Color.RED));
         scene().add(c);
     }
 

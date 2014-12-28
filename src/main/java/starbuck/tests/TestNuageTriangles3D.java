@@ -52,7 +52,7 @@ public class TestNuageTriangles3D extends TestObjet {
 				* DIM - DIM / 2, Math.random() * DIM + DIM / 2);
 
 		Cube c = new Cube(10, p);
-		c.setCouleur(Color.RED);
+		c.texture(new ColorTexture(Color.RED));
 		
 		return c;
 	}

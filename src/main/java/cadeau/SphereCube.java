@@ -36,11 +36,11 @@ public class SphereCube extends TestObjet
         c = new Cube(d/10, Point3D.O0);
         
         
-        c.setCouleur(Color.BLUE);
+        c.texture(new ColorTexture(Color.BLUE));
         
         s = new TRISphere(Point3D.X.mult(t0), d/10);
         
-        s.texture(new TColor(Color.YELLOW));
+        s.texture(new ColorTexture(Color.YELLOW));
         
         scene().add(c);
         scene().add(s);

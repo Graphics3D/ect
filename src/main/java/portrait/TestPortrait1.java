@@ -24,7 +24,7 @@ public class TestPortrait1 extends TestObjet {
         for(int i=-2; i<=2; i++)
         for(int j=-2; j<=2; j++)
         {
-            Cube c1 = new Cube(1.0, new Point3D(i*2, 0.5, j*2), Color.white);
+            Cube c1 = new Cube(1.0, new Point3D(i*2, 0.5, j*2), new ColorTexture(Color.white));
             scene().add(c1);
         }
         
