@@ -1,0 +1,133 @@
+"Soleil",1.9889E+30
+"Jupiter",1.8986E+27
+"Saturne",5.6846E+26
+"Neptune",1.0243E+26
+"Uranus",8.6832E+25
+"Terre",5.9736E+24
+"V�nus",4.8685E+24
+"Mars",6.4185E+23
+"Mercure"3.302E+23
+"Ganym�de"1.4819E+23
+"Titan"1.346E+23
+"Callisto"1.0759E+23
+"Io"8.9319E+22
+"Lune"7.348E+22
+"Europe"4.7998E+22
+"Triton"2.140E+22
+"Pluton"1.314E+22
+"Titania"3.53E+21
+"Ob�ron"3.01E+21
+"Rh�a"2.32E+21
+"Japet"2.0E+21
+"Charon"1.62E+21
+"Ariel"1.4E+21
+"Umbriel"1.2E+21
+"Dion�"1.096E+21
+"Quaoar"1.02E+21
+"C�r�s"9.445E+20
+"(28978) Ixion"9.05E+20
+"T�thys"6.176E+20
+"(55636) 2002 TX300"4.78E+20
+"(55637) 2002 UX25"3.95E+20
+"(20000) Varuna"3.82E+20
+"(55565) 2002 AW197"3.69E+20
+"(42301) 2001 UR163"2.78E+20
+"(4) Vesta"2.701E+20
+"(19308) 1996 TO66"2.30E+20
+"(47171) 1999 TC36"2.07E+20
+"(2) Pallas"2.060E+20
+"(26375) 1999 DE9"2.04E+20
+"(24835) 1995 SM55"1.95E+20
+"(19521) Chaos"1.72E+20
+"(10) Hygie"9.3E+19
+"Encelade"8.6E+19
+"(704) Interamnia"7.0E+19
+"Miranda"6.6E+19
+"(52) Europe"5.8E+19
+"Prot�e"5.0E+19
+"Mimas"3.84E+19
+"(511) Davida"3.6E+19
+"N�r�ide"3.1E+19
+"(3) Junon"2.824E+19
+"(65) Cyb�le"1.6E+19
+"S/2001 (47171) 1"1.6E+19
+"(16) Psych�"1.2E+19
+"(31) Euphrosyne"1.2E+19
+"Hyp�rion"1.1E+19
+"(7) Iris"1.034E+19
+"(324) Bamberga"1.014E+19
+"(15) Eunomie"8.4E+18
+"(451) Patientia"8.3E+18
+"(22) Calliope"7.360E+18
+"Ph�b�"7.2E+18
+"Himalia"6.7E+18
+"(13) �g�rie"6.5E+18
+"(45) Eug�nie"6.100E+18
+"Sycorax"5.4E+18
+"(11) Parth�nope"5.2E+18
+"Larissa"4.9E+18
+"(69986) 1998 WW24"4.78E+18
+"(6) H�b�"4.6E+18
+"(9) M�tis"4.6E+18
+"(14) Ir�ne"4.4E+18
+"Galat�e"3.7E+18
+"Puck"2.9E+18
+"(18) Melpom�ne"2.5E+18
+"(20) Massalia"2.5E+18
+"(8) Flore"2.1E+18
+"Amalth�e"2.1E+18
+"Despina"2.1E+18
+"Janus"1.92E+18
+"Portia"1.7E+18
+"Th�b�"1.5E+18
+"(19) Fortune"1.4E+18
+"(5) Astr�e"1.2E+18
+"(12) Victoria"1.0E+18
+"�lara"8.7E+17
+"Caliban"7.3E+17
+"(21) Lut�ce"6.3E+17
+"Juliette"5.6E+17
+"�pim�th�e"5.4E+17
+"(17) Th�tis"5.3E+17
+"Perdita"4.0E+17
+"Thalassa"3.7E+17
+"Belinda"3.6E+17
+"Cressida"3.4E+17
+"Prom�th�e"3.3E+17
+"Pasipha�"3.0E+17
+"Rosalinde"2.5E+17
+"Pandore"1.9E+17
+"Na�ade"1.9E+17
+"Desd�mone"1.8E+17
+"Carm�"1.3E+17
+"M�tis"1.2E+17
+"Bianca"9.3E+16
+"Halim�de"9.0E+16
+"Sao"9.0E+16
+"Laom�die"9.0E+16
+"N�so"9.0E+16
+"Sinop�"7.5E+16
+"(22) Kalliope I Linus"6.8E+16
+"Lysith�a"6.3E+16
+"Oph�lie"5.4E+16
+"Cord�lia"4.5E+16
+"Anank�"3.0E+16
+"H�l�ne"2.5E+16
+"Prospero"2.1E+16
+"Setebos"2.1E+16
+"Psamath�e"1.5E+16
+"L�da"1.1E+16
+"Atlas"1.1E+16
+"Phobos"1.070E+16
+"Paaliaq"8.2E+15
+"Adrast�e"7.5E+15
+"T�lesto"7.2E+15
+"Stephano"6.0E+15
+"Ymir"4.9E+15
+"Siarnaq"3.9E+15
+"Calypso"3.6E+15
+"Kiviuq"3.3E+15
+"Mab"2.8E+15
+"Pan"2.7E+15
+"Tarvos"2.7E+15
+"D�imos"2.244E+15

@@ -58,7 +58,7 @@ Neurone [] neurones ;
                 
                 TRISphere s = new TRISphere(p0, 1);
                 
-                s.texture(new TColor(Color.WHITE));
+                s.texture(new ColorTexture(Color.WHITE));
                 
                 scene().add(s);
                 

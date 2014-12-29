@@ -87,6 +87,9 @@ public class TestBalleClous extends TestObjet{
         
         th.MAXFRAMES = 1000;
         
+        th.setResx(400);
+        th.setResy(300);
+        
         th.setMaxFrames((int)th.MAXFRAMES);
         
         th.setGenerate(GENERATE_MODEL | GENERATE_IMAGE);
