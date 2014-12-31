@@ -6,7 +6,7 @@
 
 	<groupId>be.ibiiztera</groupId>
 	<artifactId>ect</artifactId>
-	<version>2014-11-004</version>
+	<version>2014-XMAX</version>
         <packaging>jar</packaging>
     <distributionManagement>
         <repository>
