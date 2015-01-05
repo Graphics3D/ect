@@ -28,9 +28,9 @@ public class PlansVideo extends TestObjet
         VideoTexture tc1, tc2, tc3, tc4;
         
         tc1 = new VideoTexture(avi1);
-        tc2 = new VideoTexture(avi1);
-        tc3 = new VideoTexture(avi1);
-        tc4 = new VideoTexture(avi1);
+        tc2 = new VideoTexture(avi2);
+        tc3 = new VideoTexture(avi3);
+        tc4 = new VideoTexture(avi4);
         
         Plan3D p1, p2, p3, p4;
         
@@ -67,16 +67,35 @@ public class PlansVideo extends TestObjet
         );
         
         
-        scene().add(scene);
+        scene().add(p1);
+        scene().add(p2);
+        scene().add(p3);
+        scene().add(p4);
         
         
     }
     public static void main(String [] args)
     {
-       String f1 = args[0];
-       String f2 = args[1];
-       String f3 = args[2];
-       String f4 = args[3];
+       String f1 ;
+       String f2 ;
+       String f3 ;
+       String f4 ;
+        if(args.length>=4)
+        {
+        f1 = args[0];
+        f2 = args[1];
+        f3 = args[2];
+        f4 = args[3];
+            
+        }
+        else
+        {
+            f1 = "C:\\EmptyCanvas\\Textures\\01.mkv";
+            f2 = "C:\\EmptyCanvas\\Textures\\02.mkv";
+            f3 = "C:\\EmptyCanvas\\Textures\\03.mkv";
+            f4 = "C:\\EmptyCanvas\\Textures\\04.mkv";
+        }
+        
         
         if(new File(f1).isFile()&&new File(f2).isFile()&&new File(f3).isFile()&&new File(f4).isFile())
         {

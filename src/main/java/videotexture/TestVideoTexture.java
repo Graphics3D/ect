@@ -58,7 +58,7 @@ class TestVideoTexture extends TestObjet {
     }
 
     public static void main(String[] args) {
-        String arg = "D:\\Bibliothèque\\Films\\Cinema anglais" + "\\" + "Sailor.Et.Lula.1990.FRENCH.BRRiP.XViD.AC3-HuSh.avi";
+        String arg = "F:\\Bibliothèque Portable\\Films\\Cinema anglais" + "\\" + "Sailor.Et.Lula.1990.FRENCH.BRRiP.XViD.AC3-HuSh.avi";
         if (args.length > 0) {
             arg = args[0];
          }
