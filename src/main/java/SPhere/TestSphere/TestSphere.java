@@ -79,7 +79,7 @@ public class TestSphere extends TestObjet
     {
         TestSphere ts = new TestSphere();
         
-        ts.setGenerate(GENERATE_IMAGE|GENERATE_MODEL);
+        ts.setGenerate(GENERATE_IMAGE/*|GENERATE_MODEL*/);
         
         ts.loop(true);
         
