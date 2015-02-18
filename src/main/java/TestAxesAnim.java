@@ -1,7 +1,7 @@
 
 import SPhere.TestSphere.Trajectoires;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjet;
+import info.emptycanvas.library.testing.TestObjetStub;
 import info.emptycanvas.library.tribase.Plan3D;
 import java.awt.Color;
 
@@ -20,7 +20,7 @@ import java.awt.Color;
  *
  * @author Manuel Dahmen <ibiiztera.it@gmail.com>
  */
-public class TestAxesAnim extends TestObjet {
+public class TestAxesAnim extends TestObjetStub {
     private Camera camera;
 
     @Override
@@ -65,5 +65,10 @@ public class TestAxesAnim extends TestObjet {
         testAxes.setMaxFrames(100);
         new Thread(testAxes).start();
         
+    }
+
+    @Override
+    public void finit() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

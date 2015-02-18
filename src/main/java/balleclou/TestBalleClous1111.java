@@ -1,7 +1,7 @@
 package balleclou;
 
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjet;
+import info.emptycanvas.library.testing.TestObjetStub;
 import info.emptycanvas.library.tribase.TRISphere;import java.awt.Color;
 import java.io.File;
 import java.io.IOException;
@@ -13,7 +13,7 @@ import javax.imageio.ImageIO;
  *
  * @author Se7en
  */
-public class TestBalleClous1111 extends TestObjet {
+public class TestBalleClous1111 extends TestObjetStub {
 
     public int MAXFRAMES = 2000;
     private TColor tc = new TColor(Color.red);
@@ -146,4 +146,9 @@ public class TestBalleClous1111 extends TestObjet {
     private Matrix33 matrix1(double a, double b) {
         return Matrix33.rot(a,b);
 			}
+
+    @Override
+    public void finit() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Iterator;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjet;
+import info.emptycanvas.library.testing.TestObjetStub;
 
-public class TestNuageTriangles3D extends TestObjet {
+public class TestNuageTriangles3D extends TestObjetStub {
 	private Random r = new Random();
 	public double DIM = 10.0;
 	public double temps = 30.0;

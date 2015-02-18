@@ -3,8 +3,8 @@ package balleclou;
 
 import info.emptycanvas.library.extra.BalleClous;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjet;
-import info.emptycanvas.library.tribase.TRISphere;import java.awt.Color;
+import info.emptycanvas.library.testing.TestObjetStub;
+import java.awt.Color;
 import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -15,7 +15,7 @@ import javax.imageio.ImageIO;
  *
  * @author Se7en
  */
-public class TestBalleClous extends TestObjet{
+public class TestBalleClous extends TestObjetStub{
     public int MAXFRAMES;
     private TColor tc = new TColor(Color.red);
     private BalleClous ballec;
@@ -24,7 +24,6 @@ public class TestBalleClous extends TestObjet{
         
         
         try {
-            super.ginit(); //To change body of generated methods, choose Tools | Templates.
 
             tc = 
                     new TColor(
@@ -95,6 +94,11 @@ public class TestBalleClous extends TestObjet{
         th.setGenerate(GENERATE_MODEL | GENERATE_IMAGE);
      
         th.run();
+    }
+
+    @Override
+    public void finit() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
 

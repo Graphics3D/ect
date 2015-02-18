@@ -6,9 +6,9 @@ package triangles;
 import java.awt.Color;
 
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjet;
+import info.emptycanvas.library.testing.TestObjetStub;
 
-public class TestTriangles extends TestObjet{
+public class TestTriangles extends TestObjetStub{
 
 	public TestTriangles() {
  	}
@@ -41,5 +41,15 @@ public class TestTriangles extends TestObjet{
 		tt.setResy(768);
 		tt.run();
 	}
+
+    @Override
+    public void finit() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void ginit() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }

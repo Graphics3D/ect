@@ -1,6 +1,6 @@
 package starbuck.tests.mouvement1;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjet;
+import info.emptycanvas.library.testing.TestObjetStub;
 
 public class MouvementCamera {
 	public abstract class BCAdder

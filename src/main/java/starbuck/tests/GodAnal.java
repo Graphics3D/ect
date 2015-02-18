@@ -9,9 +9,9 @@ import info.emptycanvas.library.base.ExtrusionGeneralisee.EG_Fonction_Courbe;
 import info.emptycanvas.library.base.ExtrusionGeneralisee.EG_Fonction_Surface;
 import info.emptycanvas.library.base.ExtrusionGeneralisee.Point;
 import info.emptycanvas.library.base.TourDeRevolution;
-import be.ibiiztera.md.pmatrix.test.pushmatrix.newtest.TestObjet;
+import be.ibiiztera.md.pmatrix.test.pushmatrix.newtest.TestObjetStub;
 
-public class GodAnal extends TestObjet {
+public class GodAnal extends TestObjetStub {
 
 	public GodAnal() {
 	}

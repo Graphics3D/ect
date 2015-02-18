@@ -10,14 +10,14 @@ Global license :
 
 package dna;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjet;
+import info.emptycanvas.library.testing.TestObjetStub;
 import java.awt.Color;
 
 /**
  *
  * @author Manuel Dahmen <ibiiztera.it@gmail.com>
  */
-public class TestDH extends TestObjet
+public class TestDH extends TestObjetStub
 {
 
     @Override
@@ -59,5 +59,15 @@ public class TestDH extends TestObjet
         dh.setResx(1000);
         dh.setResy(1000);
         new Thread(dh).start();
+    }
+
+    @Override
+    public void finit() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void ginit() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

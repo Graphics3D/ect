@@ -14,13 +14,13 @@ import balleclou.TestBalleClous111;
 import info.emptycanvas.library.object.Camera;
 import info.emptycanvas.library.object.Point3D;
 import info.emptycanvas.library.object.RepresentableConteneur;
-import info.emptycanvas.library.testing.TestObjet;
+import info.emptycanvas.library.testing.TestObjetStub;
 
 /**
  *
  * @author Manuel Dahmen <ibiiztera.it@gmail.com>
  */
-public class TestFeu extends TestObjet {
+public class TestFeu extends TestObjetStub {
 
     @Override
     public void ginit() {
@@ -55,6 +55,11 @@ public class TestFeu extends TestObjet {
         th.setGenerate(TestBalleClous111.GENERATE_IMAGE);
 
         th.run();
+    }
+
+    @Override
+    public void finit() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

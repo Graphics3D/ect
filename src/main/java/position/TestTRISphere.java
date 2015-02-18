@@ -1,6 +1,6 @@
 package position;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjet;
+import info.emptycanvas.library.testing.TestObjetStub;
 import info.emptycanvas.library.tribase.TRISphere;
 import java.awt.Color;
 
@@ -8,7 +8,7 @@ import java.awt.Color;
  *
  * @author Se7en
  */
-public class TestTRISphere extends TestObjet
+public class TestTRISphere extends TestObjetStub
 {
 
     public TestTRISphere() {
@@ -35,5 +35,15 @@ public class TestTRISphere extends TestObjet
         ts.loop(false);
         ts.run();
         
+    }
+
+    @Override
+    public void finit() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void ginit() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

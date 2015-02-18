@@ -1,14 +1,13 @@
 package info.emptycanvas.library.physic;
 
 import java.awt.Color;
-import java.util.Random;
 
 import info.emptycanvas.library.object.*;
 import info.emptycanvas.library.extra.Polyhedre;
-import info.emptycanvas.library.testing.TestObjet;
+import info.emptycanvas.library.testing.TestObjetStub;
 import info.emptycanvas.library.tribase.TRISphere;
 
-public class TestGravite2 extends TestObjet {
+public class TestGravite2 extends TestObjetStub {
 	int X = 2;
 	int Y = 2;
 	int Z = 2;
@@ -93,5 +92,10 @@ public class TestGravite2 extends TestObjet {
 		ttn.run();
 
 	}
+
+    @Override
+    public void finit() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }

@@ -6,9 +6,9 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjet;
+import info.emptycanvas.library.testing.TestObjetStub;
 
-public class TestBezier2D extends TestObjet {
+public class TestBezier2D extends TestObjetStub {
 	public void testScene() {
 		Camera c = new Camera(new Point3D(0, 0, -15), new Point3D(0, 0, 0));
 

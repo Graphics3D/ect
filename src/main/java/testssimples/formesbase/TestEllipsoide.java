@@ -10,14 +10,14 @@
 package testssimples.formesbase;
 
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjet;
+import info.emptycanvas.library.testing.TestObjetStub;
 import info.emptycanvas.library.tribase.TRIEllipsoide;
 
 /**
  *
  * @author Manuel Dahmen <ibiiztera.it@gmail.com>
  */
-public class TestEllipsoide extends TestObjet {
+public class TestEllipsoide extends TestObjetStub {
 
     @Override
     public void ginit() {

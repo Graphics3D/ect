@@ -4,10 +4,10 @@ import be.ibiiztera.md.pmatrix.pushmatrix.base.CylindreDeRevolution;
 import java.awt.Color;
 import java.util.Arrays;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjet;
+import info.emptycanvas.library.testing.TestObjetStub;
 import info.emptycanvas.library.tribase.TRISphere;
 
-public class GodAnal1 extends TestObjet {
+public class GodAnal1 extends TestObjetStub {
 	private TRISphere[] spheres;
 	private int N = 3;
 	

@@ -6,14 +6,14 @@
 package starbuck.tests;
 import info.emptycanvas.library.object.*;
 import info.emptycanvas.library.script.Loader;
-import info.emptycanvas.library.testing.TestObjet;
+import info.emptycanvas.library.testing.TestObjetStub;
 import java.util.ResourceBundle;
 
 /**
  *
  * @author Manuel DAHMEN
  */
-public class TestMite extends TestObjet{
+public class TestMite extends TestObjetStub{
     public static void main(String [] args)
     {
         TestMite to = new TestMite();

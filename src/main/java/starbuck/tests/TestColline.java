@@ -20,13 +20,13 @@
 package starbuck.tests;
 import info.emptycanvas.library.extra.CollineModele1;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjet;
+import info.emptycanvas.library.testing.TestObjetStub;
 
 /**
  *
  * @author Atelier
  */
-public class TestColline extends TestObjet {
+public class TestColline extends TestObjetStub {
     
     public static void main(String[] args) {
         TestColline to = new TestColline();

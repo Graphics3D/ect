@@ -11,7 +11,7 @@ Global license :
 package transparence;
 
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjet;
+import info.emptycanvas.library.testing.TestObjetStub;
 import info.emptycanvas.library.tribase.Plan3D;
 import java.awt.Color;
 import javax.imageio.ImageIO;
@@ -20,7 +20,7 @@ import javax.imageio.ImageIO;
  *
  * @author Manuel Dahmen <ibiiztera.it@gmail.com>
  */
-public class TestTransparence extends TestObjet
+public class TestTransparence extends TestObjetStub
 {
 
     @Override

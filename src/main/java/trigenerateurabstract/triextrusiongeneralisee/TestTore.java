@@ -11,9 +11,9 @@ Global license :
 package trigenerateurabstract.triextrusiongeneralisee;
 
 import info.emptycanvas.library.object.ColorTexture;
-import info.emptycanvas.library.testing.TestObjet;
-import static info.emptycanvas.library.testing.TestObjet.GENERATE_IMAGE;
-import static info.emptycanvas.library.testing.TestObjet.GENERATE_MODEL;
+import info.emptycanvas.library.testing.TestObjetStub;
+import static info.emptycanvas.library.testing.TestObjetStub.GENERATE_IMAGE;
+import static info.emptycanvas.library.testing.TestObjetStub.GENERATE_MODEL;
 import info.emptycanvas.library.tribase.*;
 import java.awt.Color;
 
@@ -21,7 +21,7 @@ import java.awt.Color;
  *
  * @author Manuel Dahmen <manuel.dahmen@gmail.com>
  */
-public class TestTore extends TestObjet
+public class TestTore extends TestObjetStub
 {
     @Override
     public void ginit()
@@ -58,6 +58,16 @@ public class TestTore extends TestObjet
         tp.setGenerate(GENERATE_IMAGE|GENERATE_MODEL);
         tp.loop(false);
         new Thread(tp).start();
+    }
+
+    @Override
+    public void finit() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void testScene() throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

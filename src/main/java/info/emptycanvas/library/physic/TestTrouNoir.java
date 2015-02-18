@@ -1,13 +1,12 @@
 package info.emptycanvas.library.physic;
 
 import java.awt.Color;
-import java.util.Random;
 
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjet;
+import info.emptycanvas.library.testing.TestObjetStub;
 import info.emptycanvas.library.tribase.TRISphere;
 
-public class TestTrouNoir extends TestObjet {
+public class TestTrouNoir extends TestObjetStub {
 	int X = 10;
 	int Y = 10;
 	int Z = 10;

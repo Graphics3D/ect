@@ -10,24 +10,31 @@ Global license :
 
 package SPhere.TestSphere;
 import info.emptycanvas.library.object.Camera;
+import info.emptycanvas.library.object.ColorTexture;
+import info.emptycanvas.library.object.ECBufferedImage;
+import info.emptycanvas.library.object.ImageTexture;
 import info.emptycanvas.library.object.Point3D;
-import info.emptycanvas.library.object.TColor;
-import info.emptycanvas.library.testing.TestObjet;
+import info.emptycanvas.library.testing.TestObjetStub;
 import info.emptycanvas.library.tribase.TRISphere;
 import java.awt.Color;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 
 /**
  *
  * @author Manuel Dahmen <ibiiztera.it@gmail.com>
  */
-public class TestSphere extends TestObjet
+public class TestSphere extends TestObjetStub
 {
     private double longpc[], latpc[], incrpc[][];
     public int size = 10;
     private TRISphere [] s;
-    public double taille   = 0.1;
-    public double incrlong = 0.01;
-    public double incrlat  = 0.01;
+    public double taille   = 0.2;
+    public double incrlong = 0.001;
+    public double incrlat  = 0.001;
     
     
     @Override
@@ -48,7 +55,12 @@ public class TestSphere extends TestObjet
         for(int i=0; i<s.length; i++)
         {
             s[i] = new TRISphere(Point3D.O0, taille);
-            s[i].texture(new TColor(Color.PINK));
+            try {
+                s[i].texture(new ImageTexture(new ECBufferedImage(ImageIO.read(new File("C:\\Users\\Se7en\\Pictures\\manu2.jpg")))));
+            } catch (IOException ex) {
+                s[i].texture(new ColorTexture(Color.PINK));
+                Logger.getLogger(TestSphere.class.getName()).log(Level.SEVERE, null, ex);
+            }
             scene().add(s[i]);
         }
     }
@@ -88,5 +100,10 @@ public class TestSphere extends TestObjet
         new Thread (ts) .start();
         
         
+    }
+
+    @Override
+    public void finit() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

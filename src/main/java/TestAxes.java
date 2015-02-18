@@ -1,6 +1,6 @@
 
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjet;
+import info.emptycanvas.library.testing.TestObjetStub;
 import info.emptycanvas.library.tribase.*;
 import java.awt.Color;
 
@@ -19,7 +19,7 @@ import java.awt.Color;
  *
  * @author Manuel Dahmen <ibiiztera.it@gmail.com>
  */
-public class TestAxes extends TestObjet {
+public class TestAxes extends TestObjetStub {
 
     @Override
     public void testScene() {
@@ -65,5 +65,15 @@ public class TestAxes extends TestObjet {
         testAxes.setMaxFrames(2);
         new Thread(testAxes).start();
         
+    }
+
+    @Override
+    public void finit() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void ginit() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

@@ -10,14 +10,14 @@ import java.util.logging.Logger;
 
 import javax.imageio.ImageIO;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjet;
+import info.emptycanvas.library.testing.TestObjetStub;
 import info.emptycanvas.library.tribase.TRISphere;
 
 /**
  *
  * @author Atelier
  */
-public class TestSphereInterieurStructure extends TestObjet{
+public class TestSphereInterieurStructure extends TestObjetStub{
         @Override
     public void testScene()
     {

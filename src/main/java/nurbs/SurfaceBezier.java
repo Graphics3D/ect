@@ -12,13 +12,13 @@
 package nurbs;
 import info.emptycanvas.library.nurbs.SurfaceParametriquePolynomialeBezier;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjet;
+import info.emptycanvas.library.testing.TestObjetStub;
 
 /**
  *
  * @author Manuel Dahmen <ibiiztera.it@gmail.com>
  */
-public class SurfaceBezier extends TestObjet {
+public class SurfaceBezier extends TestObjetStub {
 
     @Override
     public void testScene() {
@@ -42,5 +42,15 @@ public class SurfaceBezier extends TestObjet {
         SurfaceBezier t1 = new SurfaceBezier();
         t1.loop(false);
         new Thread(t1).start();
+    }
+
+    @Override
+    public void finit() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void ginit() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

@@ -5,14 +5,14 @@
 */
 package starbuck.tests;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjet;
+import info.emptycanvas.library.testing.TestObjetStub;
 import java.awt.Color;
 
 /**
  *
  * @author Manuel DAHMEN
  */
-public class TestTrianglePerspective extends TestObjet{
+public class TestTrianglePerspective extends TestObjetStub{
     @Override
     public void testScene()
     {
@@ -26,7 +26,7 @@ public class TestTrianglePerspective extends TestObjet{
     
     public static void main(String [] args)
     {
-        TestObjet testTriangle = new TestTrianglePerspective();
+        TestObjetStub testTriangle = new TestTrianglePerspective();
         testTriangle.camera(new Camera(new Point3D(0,0,-15000), new Point3D(0,0,0)));
         testTriangle.run();
     }

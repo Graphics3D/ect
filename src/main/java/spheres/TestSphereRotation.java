@@ -14,7 +14,7 @@ package spheres;
 
 import SPhere.TestSphere.Trajectoires;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjet;
+import info.emptycanvas.library.testing.TestObjetStub;
 import info.emptycanvas.library.tribase.TRISphere;
 import java.awt.Color;
 
@@ -22,7 +22,7 @@ import java.awt.Color;
  *
  * @author Manuel Dahmen <ibiiztera.it@gmail.com>
  */
-public class TestSphereRotation extends TestObjet
+public class TestSphereRotation extends TestObjetStub
 
 {
 TRISphere ts;
@@ -60,6 +60,11 @@ TRISphere ts;
         new Thread(tsr).start();
         
         
+    }
+
+    @Override
+    public void finit() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 

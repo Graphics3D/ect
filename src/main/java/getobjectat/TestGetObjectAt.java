@@ -16,14 +16,14 @@ import info.emptycanvas.library.object.Camera;
 import info.emptycanvas.library.object.Point3D;
 import info.emptycanvas.library.object.TColor;
 import info.emptycanvas.library.object.TRI;
-import info.emptycanvas.library.testing.TestObjet;
+import info.emptycanvas.library.testing.TestObjetStub;
 import java.awt.Color;
 
 /**
  *
  * @author Manuel Dahmen <ibiiztera.it@gmail.com>
  */
-public class TestGetObjectAt extends TestObjet
+public class TestGetObjectAt extends TestObjetStub
 {
 
     @Override
@@ -32,6 +32,16 @@ public class TestGetObjectAt extends TestObjet
         scene().add(new TRI(Point3D.O0,Point3D.X,Point3D.Y,new TColor(Color.BLUE)));
         scene().cameraActive(new Camera(Point3D.Z.mult(-1), Point3D.O0));
         
+    }
+
+    @Override
+    public void finit() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void ginit() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

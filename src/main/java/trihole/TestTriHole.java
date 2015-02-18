@@ -2,14 +2,14 @@ package trihole;
 
 import info.emptycanvas.library.extra.Polyhedre;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjet;
+import info.emptycanvas.library.testing.TestObjetStub;
 import java.awt.Color;
 
 /**
  *
  * @author Se7en
  */
-public class TestTriHole extends TestObjet
+public class TestTriHole extends TestObjetStub
 {
     private Polyhedre th;
     private Polyhedre th2;
@@ -68,5 +68,10 @@ public class TestTriHole extends TestObjet
         tth.setMaxFrames(25*10);
         
         new Thread(tth).start();
+    }
+
+    @Override
+    public void finit() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

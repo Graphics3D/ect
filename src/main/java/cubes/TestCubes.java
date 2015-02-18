@@ -3,7 +3,7 @@
  */
 package cubes;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjet;
+import info.emptycanvas.library.testing.TestObjetStub;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,12 +13,10 @@ import java.util.List;
  *
  * @author Se7en
  */
-public class TestCubes extends TestObjet{
+public class TestCubes extends TestObjetStub{
 
     @Override
     public void ginit() {
-        super.ginit(); 
-        
         scene().add(new Cube(100, 10, Color.GREEN));
         
         
@@ -50,6 +48,11 @@ public class TestCubes extends TestObjet{
         tc.setResy(900);
         
         tc.run();
+    }
+
+    @Override
+    public void finit() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
 class Cube extends RepresentableConteneur

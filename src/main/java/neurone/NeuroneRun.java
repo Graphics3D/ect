@@ -4,7 +4,7 @@
  */
 package neurone;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjet;
+import info.emptycanvas.library.testing.TestObjetStub;
 import info.emptycanvas.library.tribase.TRISphere;
 import java.awt.Color;
 
@@ -12,7 +12,7 @@ import java.awt.Color;
  *
  * @author Se7en
  */
-public class NeuroneRun extends TestObjet{
+public class NeuroneRun extends TestObjetStub{
 Neurone [] neurones ;
     public NeuroneRun() {
     }
@@ -85,5 +85,10 @@ Neurone [] neurones ;
         nr.loop(true);
         
         nr.run();
+    }
+
+    @Override
+    public void finit() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

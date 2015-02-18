@@ -2,22 +2,17 @@ package balleclou;
 
 import info.emptycanvas.library.extra.BalleClous;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjet;
-import info.emptycanvas.library.tribase.TRISphere;import java.awt.Color;
-import java.io.File;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.imageio.ImageIO;
+import info.emptycanvas.library.testing.TestObjetStub;
+import java.awt.Color;
 
 /**
  *
  * @author Se7en
  */
-public class TestBalleClous11 extends TestObjet {
+public class TestBalleClous11 extends TestObjetStub {
 
     public int MAXFRAMES = 2000;
-    private TColor tc = new TColor(Color.red);
+    private ColorTexture tc = new ColorTexture(Color.red);
     private BalleClous ballec;
     private Point3D[] s;
     public int N = 2;
@@ -27,14 +22,14 @@ public class TestBalleClous11 extends TestObjet {
 
     @Override
     public void ginit() {
-        LumierePonctuelle lumierePonctuelle = new LumierePonctuelle(Point3D.X,Color.RED);
+        LumierePonctuelle lumierePonctuelle = new LumierePonctuelle(Point3D.X, Color.RED);
         lumierePonctuelle.setR0(1);
-        
+
         scene().lumieres().add(lumierePonctuelle);
-        
-        lumierePonctuelle = new LumierePonctuelle(Point3D.Y,Color.BLUE);
+
+        lumierePonctuelle = new LumierePonctuelle(Point3D.Y, Color.BLUE);
         lumierePonctuelle.setR0(1);
-        
+
         scene().lumieres().add(lumierePonctuelle);
 
         s = new Point3D[N];
@@ -47,30 +42,21 @@ public class TestBalleClous11 extends TestObjet {
             v[i] = new Point3D(Math.random() * (V / 2 - V), Math.random() * (V / 2 - V), Math.random() * (V / 2 - V));
 
         }
-            tc =
-                    new TColor(
-                    Color.YELLOW);
-
-
+        tc
+                = new ColorTexture(
+                        Color.YELLOW);
 
         ballec = new BalleClous(Point3D.O0, 50);
 
         ballec.param(0.03);
 
-  try {
+        tc
+                = new ColorTexture(
+                        Color.PINK);
 
-            tc =
-                    new TColor(
-                    new ECBufferedImage(ImageIO.read(new File("c:/EmptyCanvas/textures/moi1.jpg"))));
-
-
-        } catch (IOException ex) {
-            Logger.getLogger(TestBalleClous1.class.getName()).log(Level.SEVERE, null, ex);
-        }
         ballec.texture(tc);
 
         scene().add(ballec);
-
 
         Camera camera;
         camera = new Camera(new Point3D(0d, 0d, -1700d),
@@ -79,10 +65,10 @@ public class TestBalleClous11 extends TestObjet {
         scene().cameraActive(camera);
 
     }
+
     public void bounce(int i) {
         s[i] = s[i].plus(v[i]);
 
-        
         if (s[i].getX() > D && v[i].getX() > 0) {
             v[i].setX(-v[i].getX());
         }
@@ -110,31 +96,27 @@ public class TestBalleClous11 extends TestObjet {
         }
 
         ballec.points().clear();
-    double totalA = 0;
-    double totalB = 0;
+        double totalA = 0;
+        double totalB = 0;
 
-        for (int j = 0; j < s.length; j++) {
-            if (s[j].getX() < 0) {
-                s[j].setX(s[j].getX() + D);
+        for (Point3D item : s) {
+            if (item.getX() < 0) {
+                item.setX(item.getX() + D);
             }
-            if (s[j].getY() < 0) {
-                s[j].setY(s[j].getY() + D);
+            if (item.getY() < 0) {
+                item.setY(item.getY() + D);
             }
-            if (s[j].getX() > D) {
-                s[j].setX(s[j].getX() - D);
+            if (item.getX() > D) {
+                item.setX(item.getX() - D);
             }
-            if (s[j].getY() > D) {
-                s[j].setY(s[j].getY() - D);
+            if (item.getY() > D) {
+                item.setY(item.getY() - D);
             }
-     
-            totalA += s[j].getX();
-            totalB += s[j].getY();
-            
-            ballec.addPoint(new Point2D(s[j].getX(), s[j].getY()));
-            
+            totalA += item.getX();
+            totalB += item.getY();
+            ballec.addPoint(new Point2D(item.getX(), item.getY()));
             ballec.position().rotation = ballec.position().rotation.mult(matrix1(totalA, totalB));
         }
-
 
     }
 
@@ -142,11 +124,6 @@ public class TestBalleClous11 extends TestObjet {
         TestBalleClous11 th = new TestBalleClous11();
 
         th.loop(true);
-
-        th.setResx(1920);
-
-        th.setResy(480);
-
         th.MAXFRAMES = 4000;
 
         th.setGenerate(TestBalleClous11.GENERATE_IMAGE);
@@ -155,6 +132,6 @@ public class TestBalleClous11 extends TestObjet {
     }
 
     private Matrix33 matrix1(double a, double b) {
-        return Matrix33.rot(a,b);
-			}
+        return Matrix33.rot(a, b);
+    }
 }

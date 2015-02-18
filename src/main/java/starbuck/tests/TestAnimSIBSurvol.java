@@ -4,7 +4,7 @@
  */
 package starbuck.tests;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjet;
+import info.emptycanvas.library.testing.TestObjetStub;
 import info.emptycanvas.library.tribase.TRISphere;
 import java.awt.Color;
 import java.io.File;
@@ -17,7 +17,7 @@ import javax.imageio.ImageIO;
  * 
  * @author Atelier
  */
-public class TestAnimSIBSurvol extends TestObjet {
+public class TestAnimSIBSurvol extends TestObjetStub {
 
 	public TestAnimSIBSurvol() {
 		super();

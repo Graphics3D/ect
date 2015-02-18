@@ -14,7 +14,7 @@ import info.emptycanvas.library.nurbs.NurbsCurve;
 import info.emptycanvas.library.object.ColorTexture;
 import info.emptycanvas.library.object.Point3D;
 import info.emptycanvas.library.object.SegmentDroite;
-import info.emptycanvas.library.testing.TestObjet;
+import info.emptycanvas.library.testing.TestObjetStub;
 import java.awt.Color;
 import java.util.AbstractMap;
 import java.util.Arrays;
@@ -23,7 +23,7 @@ import java.util.Arrays;
  *
  * @author Manuel Dahmen <ibiiztera.it@gmail.com>
  */
-class TestNurbsCurve extends TestObjet
+public class TestNurbsCurve extends TestObjetStub
 {
   @Override
   public void testScene() throws Exception {
@@ -64,7 +64,7 @@ class TestNurbsCurve extends TestObjet
     public static void main(String [] args)
     {
         System.err.println("Circle");
-        TestObjet t;
+        TestObjetStub t;
 
         t = new TestNurbsCurve();
         t.setResx(320);
@@ -72,6 +72,16 @@ class TestNurbsCurve extends TestObjet
         t.loop(false);
         new Thread(t).start();
  
+    }
+
+    @Override
+    public void finit() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void ginit() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
 

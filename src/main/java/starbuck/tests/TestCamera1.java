@@ -1,13 +1,13 @@
 package starbuck.tests;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjet;
+import info.emptycanvas.library.testing.TestObjetStub;
 import java.awt.Color;
 
 /**
  *
  * @author Atelier
  */
-public class TestCamera1 extends TestObjet {
+public class TestCamera1 extends TestObjetStub {
 
     @Override
     public void ginit() {

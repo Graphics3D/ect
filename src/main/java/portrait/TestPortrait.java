@@ -8,7 +8,7 @@
  */
 package portrait;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjet;
+import info.emptycanvas.library.testing.TestObjetStub;
 import info.emptycanvas.library.tribase.TRISphere;
 import java.awt.Color;
 
@@ -16,7 +16,7 @@ import java.awt.Color;
  *
  * @author Manuel Dahmen <ibiiztera.it@gmail.com>
  */
-public class TestPortrait extends TestObjet {
+public class TestPortrait extends TestObjetStub {
 
     @Override
     public void testScene() throws Exception {
@@ -64,5 +64,15 @@ public class TestPortrait extends TestObjet {
         tp.setResx(1600);
         tp.setResy(1200);
         tp.run();
+    }
+
+    @Override
+    public void finit() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void ginit() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

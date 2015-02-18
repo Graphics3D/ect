@@ -13,8 +13,7 @@ Global license :
 package couer;
 
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjet;
-import info.emptycanvas.library.tribase.TRISphere;
+import info.emptycanvas.library.testing.TestObjetStub;
 import java.awt.Color;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -25,7 +24,7 @@ import javax.imageio.ImageIO;
  *
  * @author Manuel Dahmen <ibiiztera.it@gmail.com>
  */
-public class TestCoeur extends TestObjet
+public class TestCoeur extends TestObjetStub
 {
 private Coeur coeur;
     @Override
@@ -66,6 +65,11 @@ private Coeur coeur;
         tc.setMaxFrames(400);
         
         new Thread(tc).start();
+    }
+
+    @Override
+    public void finit() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

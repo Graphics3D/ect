@@ -5,7 +5,7 @@ package horloge;
 import java.awt.Color;
 import java.awt.Dimension;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjet;
+import info.emptycanvas.library.testing.TestObjetStub;
 import info.emptycanvas.library.tribase.TRISphere;
 import java.awt.Container;
 import java.awt.Image;

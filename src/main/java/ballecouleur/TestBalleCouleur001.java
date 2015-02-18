@@ -2,7 +2,7 @@ package ballecouleur;
 
 import balleclou.*;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjet;
+import info.emptycanvas.library.testing.TestObjetStub;
 import java.awt.Color;
 import java.util.HashMap;
 
@@ -10,7 +10,7 @@ import java.util.HashMap;
  *
  * @author Se7en
  */
-public class TestBalleCouleur001 extends TestObjet {
+public class TestBalleCouleur001 extends TestObjetStub {
 
     public int MAXFRAMES = 2000;
     private BalleClous2 ballec;
@@ -146,5 +146,10 @@ public class TestBalleCouleur001 extends TestObjet {
 
     private Matrix33 matrix1(double a, double b) {
         return Matrix33.rot(a, b);
+    }
+
+    @Override
+    public void finit() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
