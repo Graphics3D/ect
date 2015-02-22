@@ -14,7 +14,7 @@ import info.emptycanvas.library.object.ColorTexture;
 import info.emptycanvas.library.object.LumierePointSimple;
 import info.emptycanvas.library.object.Point3D;
 import info.emptycanvas.library.testing.TestObjet;
-import info.emptycanvas.library.tribase.ParaboloideHyperboloique;
+import info.emptycanvas.library.tribase.ParaboloideHyperbolique;
 import java.awt.Color;
 
 /**
@@ -23,7 +23,7 @@ import java.awt.Color;
  */
 public class TestPH extends TestObjet {
 
-    private ParaboloideHyperboloique ph = null;
+    private ParaboloideHyperbolique ph = null;
 
     public static void main(String[] argd) {
         TestPH tth = new TestPH();
@@ -43,7 +43,7 @@ public class TestPH extends TestObjet {
     public void finit() {
         double angleU = Math.abs(Math.cos(2.0 * Math.PI * frame() / getMaxFrames() * 6));
         double angleV = Math.abs(Math.sin(2.0 * Math.PI * frame() / getMaxFrames() * 6));
-        ph = new ParaboloideHyperboloique(angleU , angleV, 1);
+        ph = new ParaboloideHyperbolique(angleU , angleV, 1);
         scene().add(ph);
         ph.texture(new ColorTexture(Color.RED));
     }
