@@ -2,12 +2,7 @@ package balleclou;
 
 import info.emptycanvas.library.object.*;
 import info.emptycanvas.library.testing.TestObjetStub;
-import info.emptycanvas.library.tribase.TRISphere;import java.awt.Color;
-import java.io.File;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.imageio.ImageIO;
+import java.awt.Color;
 
 /**
  *
@@ -16,7 +11,7 @@ import javax.imageio.ImageIO;
 public class TestBalleClous1111 extends TestObjetStub {
 
     public int MAXFRAMES = 2000;
-    private TColor tc = new TColor(Color.red);
+    private ITexture tc = new ColorTexture(Color.red);
     private BalleClous2 ballec;
     private Point3D[] s;
     public int N = 2;
@@ -41,13 +36,13 @@ public class TestBalleClous1111 extends TestObjetStub {
         for (int i = 0; i < N; i++) {
             s[i] = new Point3D(Point3D.O0);
 
-            s[i].texture(new TColor(Color.GREEN));
+            s[i].texture(new ColorTexture(Color.GREEN));
 
             v[i] = new Point3D(Math.random() * (V / 2 - V), Math.random() * (V / 2 - V), Math.random() * (V / 2 - V));
 
         }
             tc =
-                    new TColor(
+                    new ColorTexture(
                     Color.YELLOW);
 
 
@@ -55,7 +50,7 @@ public class TestBalleClous1111 extends TestObjetStub {
         ballec = new BalleClous2(Point3D.O0, 1);
 
   
-        ballec.texture(new TColor(Color.WHITE));
+        ballec.texture(new ColorTexture(Color.WHITE));
 
         scene().add(ballec);
 
@@ -132,11 +127,7 @@ public class TestBalleClous1111 extends TestObjetStub {
 
         th.loop(true);
 
-        th.setResx(1920);
-
-        th.setResy(1080);
-
-        th.MAXFRAMES = 4000;
+        th.MAXFRAMES = 2000;
 
         th.setGenerate(TestBalleClous1111.GENERATE_IMAGE);
 
@@ -149,6 +140,6 @@ public class TestBalleClous1111 extends TestObjetStub {
 
     @Override
     public void finit() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
