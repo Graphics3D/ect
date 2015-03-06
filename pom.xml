@@ -6,7 +6,7 @@
 
 	<groupId>be.ibiiztera</groupId>
 	<artifactId>ect</artifactId>
-	<version>2015-02-S02</version>
+	<version>2015-03-05</version>
         <packaging>jar</packaging>
     <distributionManagement>
         <repository>
@@ -169,7 +169,7 @@
 	 <dependency>
 	  <groupId>be.ibiiztera</groupId>
 	  <artifactId>emptycanvas</artifactId>
-	  <version>2015-02-CARNAVAL-RELEASE</version>
+	  <version>33--2015-03-05</version>
 	  <type>jar</type>
 	 </dependency>
 	 <dependency>
