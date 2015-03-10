@@ -1,10 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package film_1;
 
+import info.emptycanvas.library.lighting.Colors;
 import info.emptycanvas.library.move.Trajectoires;
 import info.emptycanvas.library.object.Camera;
 import info.emptycanvas.library.object.ColorTexture;
@@ -18,51 +14,35 @@ import java.util.ArrayList;
  *
  * @author Manuel Dahmen <manuel.dahmen@gmail.com>
  */
-public class Scene1 extends TestObjet {
+public class AnneauDeSpheresQuiTournent extends TestObjet {
+
     {
-        description = "Matraque";
+        description = "Satan me pare de son auréole noire";
     }
+    private final int NOMBRE = 6;
+    private final double PCPS = 0.1;
     private TRISphere s1;
     private TRISphere s2;
-    private ArrayList<TRISphere> spheres = new ArrayList<TRISphere>();
-    
+    private final ArrayList<TRISphere> spheres = new ArrayList<TRISphere>();
+
     private double longiI(int i) {
-        return (i*1.0/spheres.size())+(1.0) * frame() / 25. / 10.0;
+        return (i * 1.0 / NOMBRE) + (1.0) * frame() / 25. * PCPS;
     }
 
     private double latI(int i) {
         return 0;
     }
+
     private double RI(int i) {
         return 1000;
-    }
-    
-    private double longi2() {
-        return -1.0 * frame() / 25. / 10.0;
     }
 
     private double longiC() {
         return 0;
     }
 
-    private double lat1() {
-        return 0.0;
-    }
-
-    private double lat2() {
-        return 0.0;
-    }
-
     private double latC() {
-        return 1.0 * frame() / 25. / 20.0;
-    }
-
-    private double R1() {
-        return 1000;
-    }
-
-    private double R2() {
-        return 1000;
+        return 1.0 * frame() / 25. * PCPS;
     }
 
     private double RC() {
@@ -80,41 +60,42 @@ public class Scene1 extends TestObjet {
     @Override
     public void ginit() {
         /*s1 = new TRISphere(Point3D.X.mult(1000), 100);
-        s2 = new TRISphere(Point3D.X.mult(-1000), 100);
+         s2 = new TRISphere(Point3D.X.mult(-1000), 100);
 
-        s1.texture(new ColorTexture(Color.BLACK));
-        s2.texture(new ColorTexture(Color.BLACK));
+         s1.texture(new ColorTexture(Color.BLACK));
+         s2.texture(new ColorTexture(Color.BLACK));
 
-        scene().add(s1);
-        scene().add(s2);
-*/
-        for(int i=0; i<NUMBRE; i++)
-        {
+         scene().add(s1);
+         scene().add(s2);
+         */
+        for (int i = 0; i < NOMBRE; i++) {
             s1 = new TRISphere(Point3D.X.mult(1000), 100);
-            s1.texture(new ColorTexture(Color.BLACK));
+            s1.texture(new ColorTexture(Colors.random()));
             spheres.add(s1);
             scene().add(s1);
         }
-        
+
         scene().cameraActive(new Camera(Point3D.Z.mult(RC()), Point3D.O0));
     }
-    private static final int NUMBRE = 50;
 
     @Override
     public void testScene() throws Exception {
-        for(int i=0; i<NUMBRE; i++)
-        {
+        for (int i = 0; i < NOMBRE; i++) {
             s1 = spheres.get(i);
+            Point3D centre = s1.getCentre();
+            centre.texture(new ColorTexture(Color.PINK));
+            scene().add(centre);
             s1.setCentre(Trajectoires.sphere(longiI(i), latI(i), RI(i)));
         }
         scene().cameraActive().setCamera(Trajectoires.sphere(longiC(), latC(), RC()));
+        scene().cameraActive().calculerMatrice();
     }
 
     public void afterRender() {
     }
 
     public static void main(String[] args) {
-        Scene1 s = new Scene1();
+        AnneauDeSpheresQuiTournent s = new AnneauDeSpheresQuiTournent();
 
         s.loop(true);
         s.setMaxFrames(6000);

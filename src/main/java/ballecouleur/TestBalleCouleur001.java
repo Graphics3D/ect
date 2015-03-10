@@ -3,6 +3,7 @@ package ballecouleur;
 import balleclou.*;
 import info.emptycanvas.library.object.*;
 import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.tribase.TubulaireN;
 import java.awt.Color;
 import java.util.HashMap;
 
@@ -15,12 +16,13 @@ public class TestBalleCouleur001 extends TestObjetStub {
     public int MAXFRAMES = 2000;
     private BalleClous2 ballec;
     private Point3D[] s;
-    public int N = 10;
+    public int N = 7;
     public int Ncolors = 6;
     private Point3D[] v;
     private double V = 0.08;
     private double D = 1.0;
     private double ballecparam = 0.02;
+    private double TUBE_RAYON = 0.02;
     private HashMap<Point2D, Color> map = new HashMap<Point2D, Color>();
 
     @Override
@@ -61,10 +63,10 @@ public class TestBalleCouleur001 extends TestObjetStub {
 
         scene().add(ballec);
 
-        scene().lumieres().add(new LumierePonctuelle(Point3D.O0, Color.BLUE));
+        scene().lumieres().add(new LumierePonctuelle(Point3D.O0, Color.WHITE));
 
         Camera camera;
-        camera = new Camera(new Point3D(0d, 0d, -0.5d),
+        camera = new Camera(new Point3D(0d, 0d, -2d),
                 new Point3D(0d, 0d, 100d));
 
         scene().cameraActive(camera);
@@ -96,6 +98,9 @@ public class TestBalleCouleur001 extends TestObjetStub {
 
     @Override
     public void testScene() throws Exception {
+  
+        scene().clear();
+        
         for (int i = 0; i < s.length; i++) {
             bounce(i);
         }
@@ -123,7 +128,16 @@ public class TestBalleCouleur001 extends TestObjetStub {
 
             ballec.addPoint(new Point2D(s[j].getX(), s[j].getY()));
 
-            //ballec.position().rotation = ballec.position().rotation.mult(matrix1(totalA, totalB));
+            TubulaireN tubulaireN = new TubulaireN();
+            tubulaireN.diam((float)TUBE_RAYON);
+            tubulaireN.texture(new ColorTexture(Color.BLACK));
+            for(Point3D p : s)
+            {
+                tubulaireN.addPoint(p);
+            }
+            scene().add(tubulaireN);
+            
+//ballec.position().rotation = ballec.position().rotation.mult(matrix1(totalA, totalB));
 
         }
 
@@ -134,12 +148,8 @@ public class TestBalleCouleur001 extends TestObjetStub {
 
         th.loop(true);
 
-        th.setResx(400);
-
-        th.setResy(300);
-
         
-        th.setGenerate(TestBalleClous1111.GENERATE_IMAGE);
+        th.setGenerate(GENERATE_IMAGE|GENERATE_MOVIE);
 
         th.run();
     }
@@ -150,6 +160,6 @@ public class TestBalleCouleur001 extends TestObjetStub {
 
     @Override
     public void finit() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 }
