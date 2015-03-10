@@ -179,4 +179,5 @@
 	  <type>jar</type>
 	 </dependency>
 	</dependencies>
+    <name>Emptycanvas Tests and Demo Package</name>
 </project>
