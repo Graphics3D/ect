@@ -4,6 +4,8 @@ import info.emptycanvas.library.object.*;
 import info.emptycanvas.library.testing.TestObjetStub;
 import info.emptycanvas.library.tribase.TubulaireN;
 import java.awt.Color;
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 
 /**
@@ -19,11 +21,19 @@ public class Serpentin extends TestObjetStub {
     private Point3D[] v;
     private double V = 0.08;
     private double D = 1.0;
-    private double TUBE_RAYON = 0.02;
+    private double TUBE_RAYON = 0.1;
     private HashMap<Point2D, Color> map = new HashMap<Point2D, Color>();
+    private TubulaireN tubulaireN;
+    private ITexture itext;
 
     @Override
     public void ginit() {
+        try {
+            itext = new ImageTexture(ECBufferedImage.getFromFile(new File("c:\\Emptycanvas\\textures\\text1.jpg")));
+        } catch (IOException ex) {
+            itext = new ColorTexture(Color.BLUE);
+        }
+
         LumierePonctuelle lumierePonctuelle = new LumierePonctuelle(Point3D.X, Color.RED);
         lumierePonctuelle.setR0(1);
 
@@ -53,15 +63,15 @@ public class Serpentin extends TestObjetStub {
         scene().cameraActive(camera);
 
     }
-    public Point3D rand(double limitMinus, double limitPlus)
-    {
-        double [] d = new double [3];
-        for(int i=0; i<3; i++)
-        {
-            d[i] = (limitPlus-limitMinus) * Math.random() + limitMinus; 
+
+    public Point3D rand(double limitMinus, double limitPlus) {
+        double[] d = new double[3];
+        for (int i = 0; i < 3; i++) {
+            d[i] = (limitPlus - limitMinus) * Math.random() + limitMinus;
         }
         return new Point3D(d, null);
     }
+
     public void bounce(int i) {
         s[i] = s[i].plus(v[i]);
 
@@ -88,15 +98,17 @@ public class Serpentin extends TestObjetStub {
     @Override
     public void testScene() throws Exception {
 
-        scene().clear();
+        scene().remove(tubulaireN);
 
         for (int i = 0; i < s.length; i++) {
             bounce(i);
         }
 
-        TubulaireN tubulaireN = new TubulaireN();
+        tubulaireN = new TubulaireN();
         tubulaireN.diam((float) TUBE_RAYON);
-        tubulaireN.texture(new ColorTexture(Color.BLACK));
+        tubulaireN.texture(itext);
+        tubulaireN.nbrAnneaux(40);
+        tubulaireN.nbrRotations(20);
         for (Point3D p : s) {
             tubulaireN.addPoint(p);
         }
