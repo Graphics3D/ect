@@ -41,14 +41,8 @@ public class TestTore extends TestObjetStub
         tri.setMaxX(100);
         tri.setMaxY(100);
 
-        if(tri.texture()==null)
-        {
-        } else {
-            tri.texture(
-                    new ColorTexture(new Color(255, 128, 0))
-                    
-            );
-        }
+        tri.texture(new ColorTexture(Color.WHITE));
+        
         scene().add(tri);
     }
     
@@ -62,12 +56,10 @@ public class TestTore extends TestObjetStub
 
     @Override
     public void finit() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void testScene() throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
