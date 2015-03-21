@@ -4,7 +4,7 @@
                       http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>be.ibiiztera</groupId>
+	<groupId>info.emptycanvas</groupId>
 	<artifactId>ect</artifactId>
 	<version>2015-03-05</version>
         <packaging>jar</packaging>
@@ -119,18 +119,6 @@
 
 
 		 </plugins>
-<extensions>
-         <extension>
-            <groupId>org.apache.maven.wagon</groupId>
-            <artifactId>wagon-webdav-jackrabbit</artifactId>
-            <version>1.0-beta-7</version>
-         </extension>     
-         <extension>
-        <groupId>org.apache.maven.wagon</groupId>
-         <artifactId>wagon-ftp</artifactId>
-         <version>1.0-beta-6</version>
-      </extension>
-     </extensions> 
 	</build>
 	<profiles>
 		<profile>
@@ -167,9 +155,9 @@
         </dependency>
 
 	 <dependency>
-	  <groupId>be.ibiiztera</groupId>
+	  <groupId>info.emptycanvas</groupId>
 	  <artifactId>emptycanvas</artifactId>
-	  <version>34</version>
+	  <version>35</version>
 	  <type>jar</type>
 	 </dependency>
 	 <dependency>
