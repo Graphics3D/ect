@@ -26,6 +26,8 @@ public class TestGDXBSpline extends TestObjet
 
         b = new gdx_BSplineCurve();
 
+        b.incr = 0.00001;
+        
         
         b.instantiate(TestsBSpline.p(frame()), 3);
 
