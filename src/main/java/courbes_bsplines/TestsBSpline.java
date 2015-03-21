@@ -5,6 +5,8 @@
  */
 package courbes_bsplines;
 
+import java.awt.Color;
+import info.emptycanvas.library.object.ColorTexture;
 import info.emptycanvas.library.object.Point3D;
 
 /**
@@ -47,6 +49,7 @@ public class TestsBSpline {
         {
            p[i] = new Point3D (1.0*i*Math.cos((i/6)*(Math.PI*2.0)*((double)i)/N),
            1.0*i*Math.sin((i/6)*(Math.PI*2.0)*((double)i)/N), 0);
+           p[i].texture(new ColorTexture(Color.WHITE));
         }
         return p;
     }
