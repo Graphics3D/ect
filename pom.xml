@@ -156,7 +156,7 @@
 
 	 <dependency>
 	  <groupId>info.emptycanvas</groupId>
-	  <artifactId>emptycanvas</artifactId>
+	  <artifactId>empty3</artifactId>
 	  <version>35</version>
 	  <type>jar</type>
 	 </dependency>
