@@ -24,7 +24,7 @@ public class TestGDXBSpline extends TestObjet
         b.incr = 0.00001;
         
         
-        b.instantiate(TestsBSpline.p(frame()), 3);
+        b.instantiate(TestsBSpline.p2(frame()), 3);
 
         b.texture(new ColorTexture(Color.WHITE));
 

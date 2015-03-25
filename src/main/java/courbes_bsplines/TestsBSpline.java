@@ -53,5 +53,16 @@ public class TestsBSpline {
         }
         return p;
     }
+    public static Point3D [] p2 (int N)
+    {
+        Point3D [] p = new Point3D[N];
+        for(int i=0; i<N; i++)
+        {
+           p[i] = new Point3D (1.0*i*Math.cos((i/6.0)*(Math.PI*2.0)*((double)i)/N),
+           1.0*i*Math.sin((i/6.0)*(Math.PI*2.0)*((double)i)/N), 0);
+           p[i].texture(new ColorTexture(Color.WHITE));
+        }
+        return p;
+    }
 }
 

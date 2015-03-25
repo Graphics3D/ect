@@ -16,23 +16,26 @@ import java.awt.Color;
 public class TestGDXBSpline1 extends TestObjet
 {
     private gdx_BSplineCurve b;
- @Override
+    TubulaireN2 t = new TubulaireN2();
+    private static final double INCR_PRECISION = 0.00001;
+    
+    @Override
     public void finit() {
-        scene().clear();
+        
 
         b = new gdx_BSplineCurve();
 
-        b.incr = 0.00001;
+        b.incr = INCR_PRECISION;
         
         
         b.instantiate(TestsBSpline.p(frame()), 6);
 
         b.texture(new ColorTexture(Color.WHITE));
 
-        TubulaireN2 t = new TubulaireN2(b);
+        t.curve(b);
         
-        t.nbrAnneaux((int)(1/b.incr));
-        t.diam((2 * frame() + 2)/300.0);
+        t.nbrAnneaux((int)(1/INCR_PRECISION));
+        t.diam(1);
         t.nbrRotations(3);
         t.texture(new ColorTexture(Color.WHITE));
         
@@ -61,6 +64,7 @@ public class TestGDXBSpline1 extends TestObjet
 
     @Override
     public void ginit() {
+        
     }
 
     @Override
