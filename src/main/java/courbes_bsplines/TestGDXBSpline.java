@@ -21,7 +21,7 @@ public class TestGDXBSpline extends TestObjet
 
         b = new gdx_BSplineCurve();
 
-        b.incr = 0.00001;
+        b.incr = INCR_NBR_OF_SEGMENTS;
         
         
         b.instantiate(TestsBSpline.p2(frame()), 3);
@@ -33,6 +33,7 @@ public class TestGDXBSpline extends TestObjet
         scene.cameraActive().setCamera(Point3D.Z.mult(-(2 * frame() + 2)));
 
     }
+    private static final double INCR_NBR_OF_SEGMENTS = 0.00001;
 
     public static void main(String[] args) {
         TestGDXBSpline ts = new TestGDXBSpline();

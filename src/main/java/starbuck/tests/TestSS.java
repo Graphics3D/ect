@@ -1,7 +1,7 @@
 package starbuck.tests;
 
-import info.emptycanvas.library.physic.Force;
-import info.emptycanvas.library.physic.Bille;
+import info.emptycanvas.library.physics.Force;
+import info.emptycanvas.library.physics.Bille;
 import java.awt.Color;
 import java.util.HashMap;
 import java.util.Iterator;
