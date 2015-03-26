@@ -39,7 +39,6 @@ public class Horloge extends JFrame{
         this.h = h;
         this.m = m;
         this.s = s;
-        this.res = res;
         label = new JLabel("Horloge");
 
         addComponentListener(new ComponentAdapter() {
