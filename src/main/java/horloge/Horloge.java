@@ -9,6 +9,8 @@ import info.emptycanvas.library.object.*;
 import info.emptycanvas.library.tribase.TRISphere;
 import java.awt.Container;
 import java.awt.Image;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 import java.io.File;
 import java.io.IOException;
 import java.util.Date;
@@ -18,7 +20,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class Horloge {
+public class Horloge extends JFrame{
 
     Color h;
     Color m;
@@ -30,13 +32,34 @@ public class Horloge {
     private TRISphere sS;
     private TRISphere sM;
     Scene sc;
+    private final JLabel label;
 
-    public Horloge(Color h, Color m, Color s, Dimension res) {
-        super();
+    public Horloge(Color h, Color m, Color s) {
+        super("Horloge 3D");
         this.h = h;
         this.m = m;
         this.s = s;
         this.res = res;
+        label = new JLabel("Horloge");
+
+        addComponentListener(new ComponentAdapter() {
+            public void componentResized(ComponentEvent e) {
+                
+                System.out.println("componentResized");
+                
+            }
+        });
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+
+        setContentPane(label);
+
+        setSize(1024, 768);
+
+        
+        
+        setVisible(true);
+
     }
 
     public void initTime() {
@@ -48,16 +71,27 @@ public class Horloge {
 
         s0 = new TRISphere(Point3D.O0, 10);
         sH = new TRISphere(position(f * d.getHours() / 12)
-                .mult(60), 12);
+                .mult(80), 12);
         sM = new TRISphere(position(f * d.getMinutes() / 60)
                 .mult(80), 8);
         sS = new TRISphere(position(f * d.getSeconds() / 60)
-                .mult(100), 6);
-
-        s0.texture(new TColor(Color.WHITE));
-        sH.texture(new TColor(Color.GREEN));
-        sM.texture(new TColor(Color.BLUE));
-        sS.texture(new TColor(Color.RED));
+                .mult(80), 6);
+        TRISphere sG0 = new TRISphere(position(f*0.0 / 12)
+             .mult(80), 10);
+        TRISphere sG3 = new TRISphere(position(f*3.0/ 12)
+                .mult(80), 10);
+        TRISphere sG6 = new TRISphere(position(f*6.0 / 12)
+                .mult(80), 10);
+        TRISphere sG9 = new TRISphere(position(f*9.0/ 12)
+                .mult(80), 10);   
+        sG0.texture(new ColorTexture(Color.GREEN));
+        sG3.texture(new ColorTexture(Color.GREEN));
+        sG6.texture(new ColorTexture(Color.GREEN));
+        sG9.texture(new ColorTexture(Color.GREEN));
+        s0.texture(new ColorTexture(Color.WHITE));
+        sH.texture(new ColorTexture(Color.MAGENTA));
+        sM.texture(new ColorTexture(Color.BLUE));
+        sS.texture(new ColorTexture(Color.RED));
         try {
             s0.texture(
                     new ImageTexture(
@@ -79,10 +113,22 @@ public class Horloge {
         } catch (IOException ex) {
             Logger.getLogger(Horloge.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        for(int i=0; i<12; i++)
+        {
+            TRISphere sGm = new TRISphere(position(f * i / 12)
+                    .mult(80), 6);
+            sGm.texture(new ColorTexture(Color.BLUE));
+            sc.add(sGm);
+        }
         sc.add(s0);
         sc.add(sH);
         sc.add(sM);
         sc.add(sS);
+        sc.add(sG0);
+        sc.add(sG3);
+        sc.add(sG6);
+        sc.add(sG9);
 
         sc.cameraActive(new Camera(Point3D.Z.mult(-200), Point3D.O0));
     }
@@ -108,17 +154,16 @@ public class Horloge {
         return p0;
     }
 
-    public void montrer(Container c) {
+    public void montrer() {
         initTime();
 
-        ZBuffer z = ZBufferFactory.instance(
-                (int) res.getWidth(),
-                (int) res.getHeight());
-        z.suivante();
         
 
         while (montre) {
 
+        ZBuffer z = ZBufferFactory.instance(
+                (int) this.getWidth(),
+                (int) this.getHeight());
             time();
             z.suivante();
             z.couleurDeFond(new ColorTexture(Color.WHITE));
@@ -126,26 +171,17 @@ public class Horloge {
             z.dessinerSilhouette3D();
 
             Image bi = ((ZBufferImpl) z).image();
-
-            c.getGraphics().drawImage(bi, 0, 0, (int) res.getWidth(), (int) res.getHeight(), null);
+            try
+            {
+            label.getGraphics().drawImage(bi, 0, 0, (int) this.getWidth(), (int) this.getHeight(), null);
+            }
+            catch(Exception ex){}
         }
     }
 
     public static void main(String[] args) {
-        JFrame f = new JFrame("Horloge 3D");
-
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        JLabel b = new JLabel("Horloge");
-
-        f.setContentPane(b);
-
-        f.setSize(1024, 768);
-
-        f.setVisible(true);
-
-        Horloge h = new Horloge(null, null, null, b.getSize());
-
-        h.montrer(b);
+       
+        Horloge h = new Horloge(null, null, null);
+        h.montrer();
     }
 }
