@@ -1,6 +1,6 @@
 /**
  * *
- * Global license : * Microsoft Public Licence
+ * Global license : * GNU GPL v3
  *
  * author Manuel Dahmen <ibiiztera.it@gmail.com>
  *
@@ -24,11 +24,11 @@ import javax.imageio.ImageIO;
  */
 public class TestCoeur1 extends TestObjet {
 
-    private Coeur1 coeur;
+    private SurfaceElasticite coeur;
 
     @Override
     public void ginit() {
-        coeur = new Coeur1(5, 3, 1);
+        coeur = new SurfaceElasticite(5, 3, 1);
         try {
             coeur.texture(new ImageTexture(new ECBufferedImage(ImageIO.read(getClass().getResourceAsStream("moi1.jpg")))));
         } catch (IOException ex) {
