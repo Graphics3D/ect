@@ -4,9 +4,10 @@
                       http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <!-- please build montemedia and Empty3 first -->
+    <name>Emptycanvas Tests and Demo Package</name>
     <groupId>info.emptycanvas</groupId>
     <artifactId>ect</artifactId>
-    <version>2015-03-05</version>
+    <version>36</version>
     <packaging>jar</packaging>
     <distributionManagement>
         <repository>
@@ -143,7 +144,7 @@
         <dependency>
             <groupId>info.emptycanvas</groupId>
             <artifactId>empty3</artifactId>
-            <version>35</version>
+            <version>36</version>
             <type>jar</type>
         </dependency>
         <dependency>
@@ -153,5 +154,4 @@
             <type>jar</type>
         </dependency>
     </dependencies>
-    <name>Emptycanvas Tests and Demo Package</name>
 </project>

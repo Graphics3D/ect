@@ -36,7 +36,7 @@ public class TestGDXBSpline1 extends TestObjet
         
         t.nbrAnneaux((int)(1/INCR_PRECISION));
         t.diam(1);
-        t.nbrRotations(3);
+        t.nbrRotations(10);
         t.texture(new ColorTexture(Color.WHITE));
         
         scene().add(t);

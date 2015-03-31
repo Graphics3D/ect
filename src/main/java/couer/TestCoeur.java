@@ -60,7 +60,7 @@ private Coeur coeur;
     public static void main(String [] args)
     {
         TestCoeur tc = new TestCoeur();
-        
+        tc.setGenerate(GENERATE_IMAGE|GENERATE_MOVIE|GENERATE_MODEL);
         tc.loop(true);
         tc.setMaxFrames(400);
         
@@ -69,7 +69,6 @@ private Coeur coeur;
 
     @Override
     public void finit() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

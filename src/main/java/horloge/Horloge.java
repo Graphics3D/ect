@@ -7,10 +7,11 @@ import java.awt.Color;
 import java.awt.Dimension;
 import info.emptycanvas.library.object.*;
 import info.emptycanvas.library.tribase.TRISphere;
-import java.awt.Container;
 import java.awt.Image;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.util.Date;
@@ -21,7 +22,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 public class Horloge extends JFrame{
-
+    Configuration c = new Configuration();
     Color h;
     Color m;
     Color s;
@@ -42,12 +43,28 @@ public class Horloge extends JFrame{
         label = new JLabel("Horloge");
 
         addComponentListener(new ComponentAdapter() {
+            @Override
             public void componentResized(ComponentEvent e) {
                 
-                System.out.println("componentResized");
+                System.out.println("Resize ...");
                 
             }
         });
+        
+        addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if(e.getKeyChar()==new Character('f'))
+                {
+                } else {                    
+                    c.showAndReturnBack();
+                    
+                    update(c);
+                }
+            }
+});
+        
+        
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 
@@ -182,5 +199,23 @@ public class Horloge extends JFrame{
        
         Horloge h = new Horloge(null, null, null);
         h.montrer();
+    }
+
+    /**
+     *
+     * @param c
+     */
+    public void update(Configuration<Horloge> c)
+    {
+    }
+    private static class Configuration<T extends JFrame> {
+
+        public Configuration() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        private void showAndReturnBack() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
     }
 }
