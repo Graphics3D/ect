@@ -91,19 +91,14 @@ public class TestSphere extends TestObjetStub
     {
         TestSphere ts = new TestSphere();
         
-        ts.setGenerate(GENERATE_IMAGE/*|GENERATE_MODEL*/);
+        ts.setGenerate(GENERATE_IMAGE|GENERATE_MOVIE);
         
         ts.loop(true);
         
-        ts.setMaxFrames(3000);
+        ts.setMaxFrames(1);
         
         new Thread (ts) .start();
         
         
-    }
-
-    @Override
-    public void finit() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

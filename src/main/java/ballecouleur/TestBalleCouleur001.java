@@ -1,11 +1,15 @@
 package ballecouleur;
 
 import balleclou.*;
+import info.emptycanvas.library.gdximports.gdx_BSplineCurve;
 import info.emptycanvas.library.object.*;
 import info.emptycanvas.library.testing.TestObjetStub;
 import info.emptycanvas.library.tribase.TubulaireN;
+import info.emptycanvas.library.tribase.TubulaireN2;
 import java.awt.Color;
+import java.io.File;
 import java.util.HashMap;
+import javax.imageio.ImageIO;
 
 /**
  *
@@ -59,7 +63,7 @@ public class TestBalleCouleur001 extends TestObjetStub {
         ballec.param(ballecparam);
         
         
-        ballec.texture(new TextureTache(map));
+        ballec.texture(new ColorTexture(Color.GRAY));
 
         scene().add(ballec);
 
@@ -67,7 +71,7 @@ public class TestBalleCouleur001 extends TestObjetStub {
 
         Camera camera;
         camera = new Camera(new Point3D(0d, 0d, -2d),
-                new Point3D(0d, 0d, 100d));
+                new Point3D(0d, 0d, 0d));
 
         scene().cameraActive(camera);
 
@@ -126,16 +130,22 @@ public class TestBalleCouleur001 extends TestObjetStub {
             totalA += s[j].getX();
             totalB += s[j].getY();
 
+            scene().add(s[j]);//?
+            
             ballec.addPoint(new Point2D(s[j].getX(), s[j].getY()));
 
-            TubulaireN tubulaireN = new TubulaireN();
-            tubulaireN.diam((float)TUBE_RAYON);
-            tubulaireN.texture(new ColorTexture(Color.BLACK));
-            for(Point3D p : s)
-            {
-                tubulaireN.addPoint(p);
-            }
-            scene().add(tubulaireN);
+            TubulaireN2<gdx_BSplineCurve> tubulaireN2 = new TubulaireN2<gdx_BSplineCurve>();
+            tubulaireN2.diam((float)TUBE_RAYON);
+            tubulaireN2.texture(new ImageTexture(new ECBufferedImage(ImageIO.read(new File("C:\\Users\\Se7en\\Pictures\\manu2.jpg")))));
+            
+            gdx_BSplineCurve gdx_BSplineCurve = new gdx_BSplineCurve();
+            
+            gdx_BSplineCurve.instantiate(s, 5);
+            
+            
+            tubulaireN2.curve(gdx_BSplineCurve);
+            
+            scene().add(tubulaireN2);
             
 //ballec.position().rotation = ballec.position().rotation.mult(matrix1(totalA, totalB));
 
