@@ -7,7 +7,7 @@
     <name>Emptycanvas Tests and Demo Package</name>
     <groupId>info.emptycanvas</groupId>
     <artifactId>ect</artifactId>
-    <version>36</version>
+    <version>37</version>
     <packaging>jar</packaging>
     <distributionManagement>
         <repository>
@@ -144,7 +144,7 @@
         <dependency>
             <groupId>info.emptycanvas</groupId>
             <artifactId>empty3</artifactId>
-            <version>36</version>
+            <version>39a</version>
             <type>jar</type>
         </dependency>
         <dependency>

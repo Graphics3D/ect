@@ -90,8 +90,9 @@ public class PlansVideo extends TestObjetStub
         }
         else
         {
-            f1 = "C:\\EmptyCanvas\\Textures\\01.mkv";
-            f2 = "C:\\EmptyCanvas\\Textures\\02.mkv";
+            
+            f1 = "C:\\EmptyCanvas\\Textures\\_10.AVI";
+            f2 = "C:\\EmptyCanvas\\Textures\\Il embrasse sur la bouche.mp4";
             f3 = "C:\\EmptyCanvas\\Textures\\03.mkv";
             f4 = "C:\\EmptyCanvas\\Textures\\04.mkv";
         }
