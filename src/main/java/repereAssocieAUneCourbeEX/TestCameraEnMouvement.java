@@ -29,13 +29,13 @@ public class TestCameraEnMouvement extends TestObjet {
 
     @Override
     public void finit() {
-        cam.setTemps01(frame / 25.0 * 60);
+        cam.setTemps01(frame / 25.0 / 8);
         videoTexture.nextFrame();
     }
 
     @Override
     public void ginit() {
-        CourbeChoisie cc = new CourbeChoisie(10, 5, 5, 7);
+        CourbeChoisie cc = new CourbeChoisie(20, 10, 10, 7);
 
         cam = new TestCourbeCameraEnChemin(cc);
 
@@ -51,7 +51,7 @@ public class TestCameraEnMouvement extends TestObjet {
 
         scene().cameraActive(new Camera(new Point3D (30,0,-30) , new Point3D(0,0,0)));
         
-        //scene().cameraActive(cam);
+        scene().cameraActive(cam);
 
     }
 
@@ -66,7 +66,8 @@ public class TestCameraEnMouvement extends TestObjet {
 
     public static void main(String[] args) {
         TestCameraEnMouvement t = new TestCameraEnMouvement();
-
+        t.setGenerate(GENERATE_IMAGE|GENERATE_MOVIE);
+        t.setMaxFrames(8*25);
         new Thread(t).start();
     }
 }
