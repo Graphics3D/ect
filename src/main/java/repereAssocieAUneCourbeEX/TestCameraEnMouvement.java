@@ -35,7 +35,7 @@ public class TestCameraEnMouvement extends TestObjet {
 
     @Override
     public void ginit() {
-        CourbeChoisie cc = new CourbeChoisie(20, 10, 10, 7);
+        CourbeChoisie cc = new CourbeChoisie(40, 20, 20, 7);
 
         cam = new TestCourbeCameraEnChemin(cc);
 
