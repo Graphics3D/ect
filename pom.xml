@@ -136,7 +136,7 @@
     <dependencies>
         <dependency>
             <groupId>ch.randelshofer</groupId>
-            <artifactId>MonteMediaCC</artifactId>
+            <artifactId>montemedia</artifactId>
             <version>0.7.7</version>
             <type>jar</type>
         </dependency>
