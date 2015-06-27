@@ -35,7 +35,7 @@ public class TestCameraEnMouvement extends TestObjet {
 
     @Override
     public void ginit() {
-        CourbeChoisie cc = new CourbeChoisie(40, 20, 20, 7);
+        CourbeChoisie cc = new CourbeChoisie(21, 11, 11, 2);
 
         cam = new TestCourbeCameraEnChemin(cc);
 
@@ -44,8 +44,8 @@ public class TestCameraEnMouvement extends TestObjet {
         videoTexture.setTransparent(Color.BLACK);
         e.texture(videoTexture);
         
-        e.setMaxX(100);
-        e.setMaxY(100);
+        e.setMaxX(20);
+        e.setMaxY(20);
 
         scene().add(e);
 

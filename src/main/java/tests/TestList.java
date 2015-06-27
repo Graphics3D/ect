@@ -10,14 +10,11 @@ import java.util.List;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+/*
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider;
 import org.springframework.core.type.filter.AssignableTypeFilter;
 
-/**
- *
- * @author Se7en
- */
 public class TestList {
 
     public static List<Class> main() {
@@ -29,14 +26,15 @@ public class TestList {
         Set<BeanDefinition> components = provider.findCandidateComponents("*");
         for (BeanDefinition component : components) {
             Class cls;
-            try {
+            //try {
                 cls = Class.forName(component.getBeanClassName());
                 listCls.add(cls);
                 System.out.println(cls.getCanonicalName());
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(TestList.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            //} catch (ClassNotFoundException ex) {
+              //  Logger.getLogger(TestList.class.getName()).log(Level.SEVERE, null, ex);
+            //}
         }
         return listCls;
     }
 }
+*/
