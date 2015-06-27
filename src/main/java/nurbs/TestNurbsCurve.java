@@ -53,7 +53,7 @@ public class TestNurbsCurve extends TestObjetStub
       
       System.out.print(c);
       
-      scene().cameraActive().setCamera(Point3D.Z.mult(-5));
+      scene().cameraActive().setEye(Point3D.Z.mult(-5));
       
       
       scene().add(new SegmentDroite(Point3D.O0, Point3D.X, new ColorTexture(Color.RED)));

@@ -63,7 +63,7 @@ public class SphereCube1 extends TestObjetStub
         
         s.setCentre(Point3D.X.mult(TT*d));
         
-        cam.setCamera(s.getCentre().mult(F));
+        cam.setEye(s.getCentre().mult(F));
     }
     
     public static void main(String [] args)

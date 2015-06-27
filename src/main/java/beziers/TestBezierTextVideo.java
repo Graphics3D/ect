@@ -41,7 +41,7 @@ public class TestBezierTextVideo extends TestObjetStub {
         videoTexture = new VideoTexture("C:\\Emptycanvas\\textures\\Il embrasse sur la bouche.mp4");
         s.texture(videoTexture);
         scene().add(s);
-        scene().cameraActive().setCamera(Point3D.Z.mult(-6));
+        scene().cameraActive().setEye(Point3D.Z.mult(-6));
     }
 
     @Override

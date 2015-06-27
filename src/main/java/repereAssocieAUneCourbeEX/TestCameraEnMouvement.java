@@ -8,7 +8,7 @@ package repereAssocieAUneCourbeEX;
 import info.emptycanvas.library.object.Camera;
 import info.emptycanvas.library.object.Point3D;
 import info.emptycanvas.library.object.VideoTexture;
-import info.emptycanvas.library.sanorm.TestCourbeCameraEnChemin;
+import info.emptycanvas.library.sanorm.CameraInPath;
 import info.emptycanvas.library.testing.TestObjet;
 import info.emptycanvas.library.tribase.TRIEllipsoide;
 import java.awt.Color;
@@ -19,7 +19,7 @@ import java.awt.Color;
  */
 public class TestCameraEnMouvement extends TestObjet {
 
-    private TestCourbeCameraEnChemin cam;
+    private CameraInPath cam;
     private TRIEllipsoide e;
     VideoTexture videoTexture;
     @Override
@@ -37,10 +37,10 @@ public class TestCameraEnMouvement extends TestObjet {
     public void ginit() {
         CourbeChoisie cc = new CourbeChoisie(21, 11, 11, 2);
 
-        cam = new TestCourbeCameraEnChemin(cc);
+        cam = new CameraInPath(cc);
 
         e = new TRIEllipsoide(Point3D.O0, 20, 10, 10);
-        videoTexture = new VideoTexture("E:\\Emptycanvas\\textures\\Il embrasse sur la bouche.mp4");
+        videoTexture = new VideoTexture("../Videos/H3-test-from-youtube.mp4");
         videoTexture.setTransparent(Color.BLACK);
         e.texture(videoTexture);
         

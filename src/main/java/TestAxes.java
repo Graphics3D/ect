@@ -42,7 +42,7 @@ public class TestAxes extends TestObjetStub {
         scene().add(planY);
         scene().add(planZ);
         Camera camera = new Camera();
-        camera.setCamera(Point3D.Z.mult(-1));
+        camera.setEye(Point3D.Z.mult(-1));
         if(frame()%2==0)
         {
         camera.imposerMatrice(new Matrix33(

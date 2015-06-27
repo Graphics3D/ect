@@ -108,7 +108,7 @@ public class TestAnimSIB extends TestObjetStub {
 		
 		Point3D [] mCam = new Point3D[3];
 		
-		mCam[0] = Point3D.vecteur(cam.getCamera(), cam.getLookat()).norme1(); 
+		mCam[0] = Point3D.vecteur(cam.getEye(), cam.getLookat()).norme1(); 
 		mCam[1] = mCam[0].prodVect(Point3D.Y).norme1();
 		mCam[2] = mCam[0].prodVect(mCam[1]);
 		

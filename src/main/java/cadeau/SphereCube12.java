@@ -65,7 +65,7 @@ public class SphereCube12 extends TestObjetStub
         
         s.setCentre(Point3D.X.mult(TT*d));
         
-        cam.setCamera(s.getCentre().plus(Point3D.Z.mult(d/3)).plus(Point3D.X.mult(-t0-d/5)));
+        cam.setEye(s.getCentre().plus(Point3D.Z.mult(d/3)).plus(Point3D.X.mult(-t0-d/5)));
     }
     
     public static void main(String [] args)

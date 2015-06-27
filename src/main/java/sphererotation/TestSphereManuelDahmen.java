@@ -50,7 +50,7 @@ public class TestSphereManuelDahmen extends TestObjetStub
     @Override
     public void testScene() throws Exception {
         
-        scene().cameraActive().setCamera(Trajectoires.sphere(1.0*frame()/250, 0, distance));
+        scene().cameraActive().setEye(Trajectoires.sphere(1.0*frame()/250, 0, distance));
         
     }
 

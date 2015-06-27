@@ -41,7 +41,7 @@ public class TestGDXBSpline1 extends TestObjet
         
         scene().add(t);
 
-        scene.cameraActive().setCamera(Point3D.Z.mult(-(2 * frame() + 2)));
+        scene.cameraActive().setEye(Point3D.Z.mult(-(2 * frame() + 2)));
 
     }
 

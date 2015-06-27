@@ -107,7 +107,7 @@ public class Scene1 extends TestObjet {
             s1 = spheres.get(i);
             s1.setCentre(Trajectoires.sphere(longiI(i), latI(i), RI(i)));
         }
-        scene().cameraActive().setCamera(Trajectoires.sphere(longiC(), latC(), RC()));
+        scene().cameraActive().setEye(Trajectoires.sphere(longiC(), latC(), RC()));
     }
 
     public void afterRender() {

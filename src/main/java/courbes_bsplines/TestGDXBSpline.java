@@ -30,7 +30,7 @@ public class TestGDXBSpline extends TestObjet
 
         scene().add(b);
 
-        scene.cameraActive().setCamera(Point3D.Z.mult(-(2 * frame() + 2)));
+        scene.cameraActive().setEye(Point3D.Z.mult(-(2 * frame() + 2)));
 
     }
     private static final double INCR_NBR_OF_SEGMENTS = 0.00001;

@@ -33,7 +33,7 @@ public class TestBSpline extends TestObjet {
 
         scene().add(b);
 
-        scene.cameraActive().setCamera(Point3D.Z.mult(-(2 * frame() + 2)));
+        scene.cameraActive().setEye(Point3D.Z.mult(-(2 * frame() + 2)));
 
     }
 

@@ -50,7 +50,7 @@ public class TestAxesAnim extends TestObjetStub {
     public void testScene()
     {
         double pc = 1.0*frame()/getMaxFrames();
-        camera.setCamera(Trajectoires.sphere(
+        camera.setEye(Trajectoires.sphere(
                 pc, 
                 Math.sqrt(getMaxFrames())*pc,
                 1.0));

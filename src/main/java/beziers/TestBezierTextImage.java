@@ -51,7 +51,7 @@ public class TestBezierTextImage extends TestObjetStub{
             Logger.getLogger(TestBezierTextImage.class.getName()).log(Level.SEVERE, null, ex);
         }
         scene().add(s);
-        scene().cameraActive().setCamera(Point3D.Z.mult(-1));
+        scene().cameraActive().setEye(Point3D.Z.mult(-1));
         
     }
     

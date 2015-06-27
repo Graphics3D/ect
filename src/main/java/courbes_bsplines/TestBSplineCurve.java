@@ -28,7 +28,7 @@ public class TestBSplineCurve  extends TestObjet{
         
         scene().add(b);
         
-        scene.cameraActive().setCamera(Point3D.Z.mult(-24));
+        scene.cameraActive().setEye(Point3D.Z.mult(-24));
         
     }
 

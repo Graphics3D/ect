@@ -31,7 +31,7 @@ public class TestCParamBSpline extends TestObjet{
         b.texture(new ColorTexture(Color.WHITE));
         scene().add(b);
         
-        scene.cameraActive().setCamera(Point3D.Z.mult(-2*frame()-2));
+        scene.cameraActive().setEye(Point3D.Z.mult(-2*frame()-2));
         
     }
 
