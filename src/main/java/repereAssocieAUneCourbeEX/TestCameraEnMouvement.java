@@ -40,7 +40,7 @@ public class TestCameraEnMouvement extends TestObjet {
         cam = new TestCourbeCameraEnChemin(cc);
 
         e = new TRIEllipsoide(Point3D.O0, 20, 10, 10);
-        videoTexture = new VideoTexture("D:\\Emptycanvas\\textures\\Il embrasse sur la bouche.mp4");
+        videoTexture = new VideoTexture("E:\\Emptycanvas\\textures\\Il embrasse sur la bouche.mp4");
         videoTexture.setTransparent(Color.BLACK);
         e.texture(videoTexture);
         
