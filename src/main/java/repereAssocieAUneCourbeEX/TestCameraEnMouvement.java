@@ -67,7 +67,9 @@ public class TestCameraEnMouvement extends TestObjet {
     public static void main(String[] args) {
         TestCameraEnMouvement t = new TestCameraEnMouvement();
         t.setGenerate(GENERATE_IMAGE|GENERATE_MOVIE);
-        t.setMaxFrames(8*25);
+        t.setMaxFrames(30*25);
+        t.setResx(640);
+        t.setResy(480);
         new Thread(t).start();
     }
 }
