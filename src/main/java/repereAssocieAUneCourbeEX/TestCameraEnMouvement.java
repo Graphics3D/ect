@@ -35,17 +35,17 @@ public class TestCameraEnMouvement extends TestObjet {
 
     @Override
     public void ginit() {
-        CourbeChoisie cc = new CourbeChoisie(21, 11, 11, 2);
+        CourbeChoisie cc = new CourbeChoisie(21, 11, 11, 8);
 
         cam = new CameraInPath(cc);
 
         e = new TRIEllipsoide(Point3D.O0, 20, 10, 10);
-        videoTexture = new VideoTexture("../Videos/H3-test-from-youtube.mp4");
+        videoTexture = new VideoTexture("../../../Videos/animal.mp4");
         videoTexture.setTransparent(Color.BLACK);
         e.texture(videoTexture);
         
-        e.setMaxX(20);
-        e.setMaxY(20);
+        e.setMaxX(40);
+        e.setMaxY(40);
 
         scene().add(e);
 

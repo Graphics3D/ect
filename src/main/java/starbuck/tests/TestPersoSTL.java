@@ -18,6 +18,7 @@ import info.emptycanvas.library.tribase.TRIEllipsoide;
  * @author Manuel DAHMEN
  * 
  */
+@Deprecated
 public class TestPersoSTL {
 	public static String path = "f:\\bin\\";
 	public static Scene scene = new Scene();
