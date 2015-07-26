@@ -13,7 +13,7 @@ import info.emptycanvas.library.object.Point3D;
  *
  * @author Se7en
  */
-public class CourbeChoisie extends ParametrizedCurve {
+public class CourbeChoisieRandom extends ParametrizedCurve {
     private final double h;
     private final double L;
     private final double l;
@@ -24,7 +24,7 @@ public class CourbeChoisie extends ParametrizedCurve {
      * @param l
      * @param L 
      */
-    public CourbeChoisie(double h, double l, double L, double n)
+    public CourbeChoisieRandom(double h, double l, double L, double n)
     {
         this.h = h;
         this.l = l;
@@ -37,8 +37,8 @@ public class CourbeChoisie extends ParametrizedCurve {
     @Override
     public Point3D calculerPoint3D(double t) {
         double m = 1;Math.sqrt(L*L+l*l);
-        m = Math.sqrt(1-t*t);
-        return new Point3D(L*Math.cos(2*Math.PI/n*t)/m,l*Math.sin(2*Math.PI/n*t)/m,h*n*t);
+        m = m*t/Math.sqrt(1-t*t);
+        return new Point3D(L*Math.cos(2*Math.PI/n*m),l*Math.sin(2*Math.PI/n*m),h*n*m);
     }
 
     @Override

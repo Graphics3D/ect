@@ -10,6 +10,7 @@ import info.emptycanvas.library.object.Point3D;
 import info.emptycanvas.library.object.VideoTexture;
 import info.emptycanvas.library.sanorm.CameraInPath;
 import info.emptycanvas.library.testing.TestObjet;
+import info.emptycanvas.library.tribase.TRICylindre;
 import info.emptycanvas.library.tribase.TRIEllipsoide;
 import java.awt.Color;
 
@@ -17,10 +18,10 @@ import java.awt.Color;
  *
  * @author Manuel Dahmen
  */
-public class TestCameraEnMouvement extends TestObjet {
+public class TestCameraEnMouvementCylindre extends TestObjet {
 
     private CameraInPath cam;
-    private TRIEllipsoide e;
+    private TRICylindre e;
     VideoTexture videoTexture;
     @Override
     public void afterRenderFrame() {
@@ -39,8 +40,8 @@ public class TestCameraEnMouvement extends TestObjet {
 
         cam = new CameraInPath(cc);
 
-        e = new TRIEllipsoide(Point3D.O0, 20, 10, 10);
-        videoTexture = new VideoTexture("../../../Videos/animal2.mp4");
+        e = new TRICylindre(20, 10);
+        videoTexture = new VideoTexture("../../../Videos/animal.mp4");
         videoTexture.setTransparent(Color.BLACK);
         e.texture(videoTexture);
         
@@ -65,7 +66,7 @@ public class TestCameraEnMouvement extends TestObjet {
     }
 
     public static void main(String[] args) {
-        TestCameraEnMouvement t = new TestCameraEnMouvement();
+        TestCameraEnMouvementCylindre t = new TestCameraEnMouvementCylindre();
         t.setGenerate(GENERATE_IMAGE|GENERATE_MOVIE);
         t.setMaxFrames(30*25);
         t.setResx(640);

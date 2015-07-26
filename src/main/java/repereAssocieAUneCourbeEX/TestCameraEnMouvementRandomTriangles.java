@@ -10,17 +10,20 @@ import info.emptycanvas.library.object.Point3D;
 import info.emptycanvas.library.object.VideoTexture;
 import info.emptycanvas.library.sanorm.CameraInPath;
 import info.emptycanvas.library.testing.TestObjet;
+import info.emptycanvas.library.tribase.TRICylindre;
 import info.emptycanvas.library.tribase.TRIEllipsoide;
+import info.emptycanvas.library.tribase.TRIObjetGenerateur;
+import info.emptycanvas.library.tribase.TRIObjetGenerateurAbstract;
 import java.awt.Color;
 
 /**
  *
  * @author Manuel Dahmen
  */
-public class TestCameraEnMouvement extends TestObjet {
+public class TestCameraEnMouvementRandomTriangles extends TestObjet {
 
     private CameraInPath cam;
-    private TRIEllipsoide e;
+    private TRIObjetGenerateurAbstract e;
     VideoTexture videoTexture;
     @Override
     public void afterRenderFrame() {
@@ -35,11 +38,11 @@ public class TestCameraEnMouvement extends TestObjet {
 
     @Override
     public void ginit() {
-        CourbeChoisie cc = new CourbeChoisie(21, 11, 11, 8);
+        CourbeChoisieRandom cc = new CourbeChoisieRandom(21, 11, 11, 8);
 
         cam = new CameraInPath(cc);
 
-        e = new TRIEllipsoide(Point3D.O0, 20, 10, 10);
+        e = new TRITRINuage(20.0, 10.0, 10.0, 1.0, 0.4);
         videoTexture = new VideoTexture("../../../Videos/animal2.mp4");
         videoTexture.setTransparent(Color.BLACK);
         e.texture(videoTexture);
@@ -65,7 +68,7 @@ public class TestCameraEnMouvement extends TestObjet {
     }
 
     public static void main(String[] args) {
-        TestCameraEnMouvement t = new TestCameraEnMouvement();
+        TestCameraEnMouvementRandomTriangles t = new TestCameraEnMouvementRandomTriangles();
         t.setGenerate(GENERATE_IMAGE|GENERATE_MOVIE);
         t.setMaxFrames(30*25);
         t.setResx(640);
