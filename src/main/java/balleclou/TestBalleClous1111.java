@@ -18,6 +18,8 @@ public class TestBalleClous1111 extends TestObjetStub {
     private Point3D[] v;
     private double V = 0.03;
     private double D = 1;
+    private VideoTexture videoTexture;
+
 
     @Override
     public void ginit() {
@@ -51,7 +53,9 @@ public class TestBalleClous1111 extends TestObjetStub {
 
   
         ballec.texture(new ColorTexture(Color.WHITE));
-
+        videoTexture = new VideoTexture("C:\\Users\\manue\\Videos\\Beautifull.mp4");
+        videoTexture.setTransparent(Color.BLACK);
+        ballec.texture(videoTexture);
         scene().add(ballec);
 
         scene().lumieres().add(new LumierePonctuelle(Point3D.O0, Color.BLUE));
@@ -140,6 +144,8 @@ public class TestBalleClous1111 extends TestObjetStub {
 
     @Override
     public void finit() {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (!videoTexture.nextFrame()) {
+            this.STOP();
+        }
     }
 }

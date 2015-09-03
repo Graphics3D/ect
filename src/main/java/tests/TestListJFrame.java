@@ -27,13 +27,14 @@ public class TestListJFrame extends javax.swing.JFrame {
      */
     public TestListJFrame() {
         initComponents();
-        
+        /*
         Iterator<Class> iterator = TestList.main().iterator();
         while(iterator.hasNext())
         {
             jComboBox1.addItem(iterator.next());
             
         }
+        */
     }
 
     /**

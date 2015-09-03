@@ -1,5 +1,5 @@
 package mytests;
-
+/*
 import junit.framework.TestCase;
 
 public class TestAll extends TestCase {
@@ -39,7 +39,7 @@ public class TestAll extends TestCase {
 		to.run();
 		
 		assertTrue(true);
-*/
 	}
 	
 }
+*/

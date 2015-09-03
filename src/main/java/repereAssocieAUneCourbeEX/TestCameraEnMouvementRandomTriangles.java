@@ -33,7 +33,9 @@ public class TestCameraEnMouvementRandomTriangles extends TestObjet {
     @Override
     public void finit() {
         cam.setTemps01(frame / 25.0 / 8);
-        videoTexture.nextFrame();
+        if (!videoTexture.nextFrame()) {
+            this.STOP();
+        }
     }
 
     @Override
@@ -43,7 +45,7 @@ public class TestCameraEnMouvementRandomTriangles extends TestObjet {
         cam = new CameraInPath(cc);
 
         e = new TRITRINuage(20.0, 10.0, 10.0, 1.0, 0.4);
-        videoTexture = new VideoTexture("../../../Videos/animal2.mp4");
+        videoTexture = new VideoTexture("C:\\Users\\manue\\Videos\\Beautifull.mp4");
         videoTexture.setTransparent(Color.BLACK);
         e.texture(videoTexture);
         
