@@ -133,7 +133,7 @@ public class TestBalleClous1111 extends TestObjetStub {
 
         th.MAXFRAMES = 2000;
 
-        th.setGenerate(TestBalleClous1111.GENERATE_IMAGE);
+        th.setGenerate(GENERATE_IMAGE | GENERATE_MOVIE);
 
         th.run();
     }

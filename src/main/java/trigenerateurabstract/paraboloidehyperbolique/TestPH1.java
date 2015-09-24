@@ -30,20 +30,22 @@ public class TestPH1 extends TestObjet {
 
         tth.loop(true);
         tth.setMaxFrames(250);
-
+        tth.setGenerate(GENERATE_IMAGE | GENERATE_MOVIE);
         new Thread(tth).start();
     }
 
     @Override
     public void afterRenderFrame() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void finit() {
-        double a = Math.sqrt(frame());
-        double b = Math.sqrt(frame());
-        ph = new ParaboloideHyperbolique(a , b, frame());
+        double a = Math.sqrt(frame() + 1);
+        double b = Math.sqrt(frame() + 1);
+        ph = new ParaboloideHyperbolique(a, b, 2);
+        ph.setMaxX(100);
+        ph.setMaxY(100);
         scene().add(ph);
         ph.texture(new ColorTexture(Color.RED));
     }
@@ -55,7 +57,7 @@ public class TestPH1 extends TestObjet {
 
     @Override
     public void testScene() throws Exception {
-        scene().cameraActive(new Camera(Point3D.Z.mult(frame), Point3D.O0));
+        scene().cameraActive(new Camera(Point3D.Z.mult(4).mult(new Point3D(1.0 * frame() / getMaxFrames() * 2 * Math.PI, 0, 0)), Point3D.O0));
         scene().lumieres().add(new LumierePointSimple(Color.WHITE, Point3D.X.plus(Point3D.Y), 1));
     }
 

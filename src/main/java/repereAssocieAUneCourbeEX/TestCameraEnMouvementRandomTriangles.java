@@ -40,7 +40,7 @@ public class TestCameraEnMouvementRandomTriangles extends TestObjet {
 
     @Override
     public void ginit() {
-        CourbeChoisieRandom cc = new CourbeChoisieRandom(21, 11, 11, 8);
+        CourbeChoisieRandom cc = new CourbeChoisieRandom(40, 22, 22, 8);
 
         cam = new CameraInPath(cc);
 
