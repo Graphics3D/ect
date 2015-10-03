@@ -3,11 +3,12 @@
  */
 package horloge;
 
-import java.awt.Color;
-import java.awt.Dimension;
 import info.emptycanvas.library.object.*;
 import info.emptycanvas.library.tribase.TRISphere;
-import java.awt.Image;
+
+import javax.imageio.ImageIO;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import java.awt.event.KeyAdapter;
@@ -17,9 +18,6 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.imageio.ImageIO;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 
 public class Horloge extends JFrame{
     Configuration c = new Configuration();
@@ -211,11 +209,11 @@ public class Horloge extends JFrame{
     private static class Configuration<T extends JFrame> {
 
         public Configuration() {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         }
 
         private void showAndReturnBack() {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         }
     }
 }

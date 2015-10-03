@@ -131,7 +131,7 @@ public class TestBalleClous1111 extends TestObjetStub {
 
         th.loop(true);
 
-        th.MAXFRAMES = 2000;
+        th.MAXFRAMES = 20000;
 
         th.setGenerate(GENERATE_IMAGE | GENERATE_MOVIE);
 

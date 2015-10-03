@@ -11,8 +11,8 @@ import info.emptycanvas.library.object.VideoTexture;
 import info.emptycanvas.library.sanorm.CameraInPath;
 import info.emptycanvas.library.testing.TestObjet;
 import info.emptycanvas.library.tribase.TRICylindre;
-import info.emptycanvas.library.tribase.TRIEllipsoide;
-import java.awt.Color;
+
+import java.awt.*;
 
 /**
  *
@@ -36,12 +36,12 @@ public class TestCameraEnMouvementCylindre extends TestObjet {
 
     @Override
     public void ginit() {
-        CourbeChoisie cc = new CourbeChoisie(21, 11, 11, 8);
+        CourbeChoisie cc = new CourbeChoisie(11, 11, 21, 8);
 
         cam = new CameraInPath(cc);
 
-        e = new TRICylindre(20, 10);
-        videoTexture = new VideoTexture("../../../Videos/animal.mp4");
+        e = new TRICylindre(10, 20);
+        videoTexture = new VideoTexture("../../../Videos/Beautifull.mp4");
         videoTexture.setTransparent(Color.BLACK);
         e.texture(videoTexture);
         
