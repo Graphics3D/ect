@@ -1,8 +1,11 @@
 import SPhere.TestSphere.Trajectoires;
 import info.emptycanvas.library.nurbs.ParametrizedSurface;
 import info.emptycanvas.library.object.Camera;
+import info.emptycanvas.library.object.ColorTexture;
 import info.emptycanvas.library.object.Point3D;
 import info.emptycanvas.library.renderer.TestObjet;
+
+import java.awt.*;
 
 
 /**
@@ -14,7 +17,7 @@ class Forme extends ParametrizedSurface {
     @Override
     public Point3D calculerPoint3D(double u, double v) {
         Point3D p = Trajectoires.sphere(u, v, 1);
-        return p.moins(P0).mult(p.norme() * p.norme() * Math.exp(-1 * Point3D.distance(P0, p) * Point3D.distance(P0, p)));
+        return p.moins(P0).mult(Math.pow(p.moins(P0).norme(), 2) * Math.exp(1 * Point3D.distance(P0, p) * Point3D.distance(P0, p)) * u * v);
     }
 
     @Override
@@ -40,6 +43,7 @@ public class TriTest extends TestObjet {
     @Override
     public void ginit() {
         f = new Forme();
+        f.texture(new ColorTexture(Color.BLUE));
         scene().add(f);
     }
 
@@ -49,7 +53,7 @@ public class TriTest extends TestObjet {
 
     @Override
     public void testScene() throws Exception {
-        scene().cameraActive(new Camera(Point3D.Z.mult(-1), Point3D.O0));
+        scene().cameraActive(new Camera(Point3D.Z.mult(-100 + 100 * ((float) frame) / getMaxFrames()), Point3D.O0));
 
     }
 
