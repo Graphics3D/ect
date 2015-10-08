@@ -6,15 +6,15 @@ import info.emptycanvas.library.renderer.TestObjet;
 
 
 /**
- * Created by manue on 03-10-15.
+ * Created by manuel on 03-10-15.
  */
 class Forme extends ParametrizedSurface {
     public Point3D P0 = Point3D.O0;
 
     @Override
     public Point3D calculerPoint3D(double u, double v) {
-        Point3D p = Trajectoires.sphere(u, v, 50);
-        return p.moins(P0).mult(Math.exp(-10 * Point3D.distance(P0, p) * Point3D.distance(P0, p)));
+        Point3D p = Trajectoires.sphere(u, v, 1);
+        return p.moins(P0).mult(p.norme() * p.norme() * Math.exp(-1 * Point3D.distance(P0, p) * Point3D.distance(P0, p)));
     }
 
     @Override
@@ -49,14 +49,14 @@ public class TriTest extends TestObjet {
 
     @Override
     public void testScene() throws Exception {
-        scene().cameraActive(new Camera(Point3D.Z.mult(-20), Point3D.O0));
+        scene().cameraActive(new Camera(Point3D.Z.mult(-1), Point3D.O0));
 
     }
 
     public static void main(String[] args) {
         TriTest test = new TriTest();
         test.setMaxFrames(100);
-
+        test.setGenerate(GENERATE_IMAGE | GENERATE_MOVIE);
         new Thread(test).start();
     }
 
