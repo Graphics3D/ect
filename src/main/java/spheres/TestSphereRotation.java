@@ -1,8 +1,8 @@
 /***
 Global license : 
 
-    
-    author Manuel Dahmen <ibiiztera.it@gmail.com>
+
+ author Manuel Dahmen <manuel.dahmen@gmail.com>
 
     Creation time 06-nov.-2014
 
