@@ -20,7 +20,9 @@ import info.emptycanvas.library.testing.TestObjetStub;
 import java.awt.Color;
 
 /**
- *
+ * Future: this should be very low level: like :
+ * Representable.setSelectionZoneId(long szid);
+ * ZBuffer.getSelectionZoneId(int x, int y);
  * @author Manuel Dahmen <ibiiztera.it@gmail.com>
  */
 public class TestGetObjectAt extends TestObjetStub

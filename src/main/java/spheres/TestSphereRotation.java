@@ -58,6 +58,7 @@ TRISphere ts;
         //tsr.setResx(100);
         //tsr.setResy(100);
         tsr.setGenerate(GENERATE_IMAGE | GENERATE_MOVIE);
+        tsr.unterminable(false);
         new Thread(tsr).start();
         
         
