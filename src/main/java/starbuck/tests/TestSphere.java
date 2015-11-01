@@ -6,7 +6,7 @@
 
 package starbuck.tests;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import info.emptycanvas.library.tribase.TRISphere;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -18,7 +18,7 @@ import javax.imageio.ImageIO;
  * @author Manuel DAHMEN
  * @date
  */
-public class TestSphere extends TestObjetStub{
+public class TestSphere extends TestObjetSub{
 
     @Override
     public void testScene() {

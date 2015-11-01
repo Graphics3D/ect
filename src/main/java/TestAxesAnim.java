@@ -1,7 +1,7 @@
 
 import SPhere.TestSphere.Trajectoires;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import info.emptycanvas.library.tribase.Plan3D;
 import java.awt.Color;
 
@@ -20,7 +20,7 @@ import java.awt.Color;
  *
  * @author Manuel Dahmen <ibiiztera.it@gmail.com>
  */
-public class TestAxesAnim extends TestObjetStub {
+public class TestAxesAnim extends TestObjetSub {
     private Camera camera;
 
     @Override

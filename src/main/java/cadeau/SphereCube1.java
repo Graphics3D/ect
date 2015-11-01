@@ -10,7 +10,7 @@ Global license :
 
 package cadeau;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import info.emptycanvas.library.tribase.TRISphere;
 import java.awt.Color;
 
@@ -18,7 +18,7 @@ import java.awt.Color;
  *
  * @author Manuel Dahmen <ibiiztera.it@gmail.com>
  */
-public class SphereCube1 extends TestObjetStub 
+public class SphereCube1 extends TestObjetSub
 
 {
     double d = 90;

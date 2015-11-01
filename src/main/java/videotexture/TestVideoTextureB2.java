@@ -15,14 +15,14 @@ import info.emptycanvas.library.object.P;
 import info.emptycanvas.library.object.Point3D;
 import info.emptycanvas.library.object.TRI;
 import info.emptycanvas.library.object.VideoTexture;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import info.emptycanvas.library.tribase.*;
 
 /**
  *
  * @author Manuel Dahmen <ibiiztera.it@gmail.com>
  */
-class TestVideoTextureB2 extends TestObjetStub {
+class TestVideoTextureB2 extends TestObjetSub {
     TRI tri = null;
     VideoTexture videoTexture;
     public String moviefilename;
@@ -53,7 +53,7 @@ class TestVideoTextureB2 extends TestObjetStub {
     }
 
     public static void testing(String arg) {
-        TestObjetStub to;
+        TestObjetSub to;
         to = new TestVideoTextureB2(arg);
         to.setMaxFrames(25*60*120);
         to.loop(true);

@@ -16,7 +16,7 @@ import info.emptycanvas.library.object.ECBufferedImage;
 import info.emptycanvas.library.object.ImageTexture;
 import info.emptycanvas.library.object.P;
 import info.emptycanvas.library.object.Point3D;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -27,7 +27,7 @@ import java.awt.Color;
  *
  * @author Manuel Dahmen <ibiiztera.it@gmail.com>
  */
-public class TestBezierTextImage extends TestObjetStub{
+public class TestBezierTextImage extends TestObjetSub{
     private final Point3D[][] coeff = new Point3D[][]{
         {P.n(2,-2,0), P.n(2,-1,0),P.n(2,0,0), P.n(2,1,0), P.n(2,2,0)},
         {P.n(1,-2,0), P.n(1,-1,0),P.n(1,0,0), P.n(1,1,0), P.n(1,2,0)},

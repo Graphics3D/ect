@@ -1,13 +1,13 @@
 package starbuck.tests;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import java.awt.Color;
 
 /**
  *
  * @author Manuel DAHMEN
  */
-public class TestTriangle extends TestObjetStub{
+public class TestTriangle extends TestObjetSub{
     @Override
     public void testScene()
     {

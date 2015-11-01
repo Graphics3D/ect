@@ -5,14 +5,14 @@
 */
 package starbuck.tests;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import java.awt.Color;
 
 /**
  *
  * @author Manuel DAHMEN
  */
-public class TestCubeTroue extends TestObjetStub {
+public class TestCubeTroue extends TestObjetSub {
 
     @Override
     public void testScene() {
@@ -39,7 +39,7 @@ public class TestCubeTroue extends TestObjetStub {
     }
 
     public static void main(String[] args) {
-        TestCubeTroue TestObjetStub = new TestCubeTroue();
-        TestObjetStub.run();
+        TestCubeTroue TestObjetSub = new TestCubeTroue();
+        TestObjetSub.run();
     }
 }

@@ -12,13 +12,13 @@
 package nurbs;
 import info.emptycanvas.library.nurbs.SurfaceParametriquePolynomialeBezier;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 
 /**
  *
  * @author Manuel Dahmen <ibiiztera.it@gmail.com>
  */
-public class SurfaceBezier extends TestObjetStub {
+public class SurfaceBezier extends TestObjetSub {
 
     @Override
     public void testScene() {

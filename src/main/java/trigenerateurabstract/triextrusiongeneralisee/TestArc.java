@@ -10,7 +10,7 @@
 package trigenerateurabstract.triextrusiongeneralisee;
 
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import info.emptycanvas.library.tribase.*;
 import java.awt.Color;
 
@@ -18,7 +18,7 @@ import java.awt.Color;
  *
  * @author Manuel Dahmen <manuel.dahmen@gmail.com>
  */
-public class TestArc extends TestObjetStub {
+public class TestArc extends TestObjetSub {
 
     private TRIExtrusionGeneralisee eg;
 

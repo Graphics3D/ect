@@ -1,8 +1,8 @@
 package starbuck.tests;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 
-public class TestCube3D extends TestObjetStub {
+public class TestCube3D extends TestObjetSub {
 	protected Cube c ;
 	
 	@Override

@@ -12,7 +12,7 @@ Global license :
 
 package coeur;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import info.emptycanvas.library.tribase.TRIObjetGenerateurAbstract;
 import info.emptycanvas.library.tribase.TRISphere;
 

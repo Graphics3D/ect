@@ -3,10 +3,10 @@ package starbuck.tests;
 import java.awt.Color;
 import java.util.Arrays;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import info.emptycanvas.library.tribase.TRISphere;
 
-public class TestSpheres2 extends TestObjetStub {
+public class TestSpheres2 extends TestObjetSub {
 	private TRISphere[] spheres;
 	private int N = 3;
 	

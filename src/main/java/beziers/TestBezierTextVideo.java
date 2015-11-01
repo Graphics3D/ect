@@ -13,14 +13,14 @@ import info.emptycanvas.library.nurbs.SurfaceParametriquePolynomialeBezier;
 import info.emptycanvas.library.object.P;
 import info.emptycanvas.library.object.Point3D;
 import info.emptycanvas.library.object.VideoTexture;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import java.io.File;
 
 /**
  *
  * @author Manuel Dahmen <ibiiztera.it@gmail.com>
  */
-public class TestBezierTextVideo extends TestObjetStub {
+public class TestBezierTextVideo extends TestObjetSub {
 
     private final Point3D[][] coeff = new Point3D[][]{
         {P.n(2, -2, 0), P.n(2, -1, 0), P.n(2, 0, 0), P.n(2, 1, 0), P.n(2, 2, 0)},

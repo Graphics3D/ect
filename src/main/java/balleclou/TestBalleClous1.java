@@ -2,7 +2,7 @@ package balleclou;
 
 import info.emptycanvas.library.extra.BalleClous;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import java.awt.Color;
 import java.io.File;
 import java.io.IOException;
@@ -14,7 +14,7 @@ import javax.imageio.ImageIO;
  *
  * @author Se7en
  */
-public class TestBalleClous1 extends TestObjetStub {
+public class TestBalleClous1 extends TestObjetSub {
 
     public int MAXFRAMES = 2000;
     private TColor tc = new TColor(Color.red);

@@ -5,10 +5,10 @@ import info.emptycanvas.library.physics.Bille;
 import java.awt.Color;
 import java.util.Random;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import info.emptycanvas.library.tribase.TRISphere;
 
-public class TestGravite4 extends TestObjetStub {
+public class TestGravite4 extends TestObjetSub {
 	int X = 4;
 	int Y = 4;
 	int Z = 4;

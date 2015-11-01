@@ -10,7 +10,7 @@ Global license :
 
 package spirale;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import info.emptycanvas.library.tribase.Plan3D;
 
 /**

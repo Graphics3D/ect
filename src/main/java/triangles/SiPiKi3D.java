@@ -5,7 +5,7 @@ import java.util.Iterator;
 
 
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 
 public class SiPiKi3D extends RepresentableConteneur
 {

@@ -13,14 +13,14 @@ package videotexture;
 import info.emptycanvas.library.object.P;
 import info.emptycanvas.library.object.TRI;
 import info.emptycanvas.library.object.VideoTexture;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import info.emptycanvas.library.tribase.Plan3D;
 
 /**
  *
  * @author Manuel Dahmen <ibiiztera.it@gmail.com>
  */
-public class TestVideoTexturePlan extends TestObjetStub {
+public class TestVideoTexturePlan extends TestObjetSub {
     TRI tri = null;
     VideoTexture videoTexture;
     public String moviefilename;
@@ -47,7 +47,7 @@ public class TestVideoTexturePlan extends TestObjetStub {
     }
 
     public static void testing(String arg) {
-        TestObjetStub to;
+        TestObjetSub to;
         to = new TestVideoTexturePlan(arg);
         to.setMaxFrames(25*60*120);
         to.setResx(600);

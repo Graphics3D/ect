@@ -16,7 +16,7 @@ import info.emptycanvas.library.object.Camera;
 import info.emptycanvas.library.object.Point3D;
 import info.emptycanvas.library.object.TColor;
 import info.emptycanvas.library.object.TRI;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import java.awt.Color;
 
 /**
@@ -25,7 +25,7 @@ import java.awt.Color;
  * ZBuffer.getSelectionZoneId(int x, int y);
  * @author Manuel Dahmen <ibiiztera.it@gmail.com>
  */
-public class TestGetObjectAt extends TestObjetStub
+public class TestGetObjectAt extends TestObjetSub
 {
 
     @Override

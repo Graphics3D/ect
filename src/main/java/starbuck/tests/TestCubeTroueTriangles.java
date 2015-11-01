@@ -5,13 +5,13 @@
 */
 package starbuck.tests;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 
 /**
  *
  * @author Manuel DAHMEN
  */
-public class TestCubeTroueTriangles extends TestObjetStub {
+public class TestCubeTroueTriangles extends TestObjetSub {
 
     @Override
     public void testScene() {
@@ -33,7 +33,7 @@ public class TestCubeTroueTriangles extends TestObjetStub {
     }
 
     public static void main(String[] args) {
-        TestCubeTroueTriangles TestObjetStub = new TestCubeTroueTriangles();
-        TestObjetStub.run();
+        TestCubeTroueTriangles TestObjetSub = new TestCubeTroueTriangles();
+        TestObjetSub.run();
     }
 }

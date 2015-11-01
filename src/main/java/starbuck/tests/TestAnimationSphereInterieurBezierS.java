@@ -4,7 +4,7 @@
  */
 package starbuck.tests;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import info.emptycanvas.library.tribase.TRISphere;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -15,7 +15,7 @@ import javax.imageio.ImageIO;
  *
  * @author Atelier
  */
-public class TestAnimationSphereInterieurBezierS extends TestObjetStub{
+public class TestAnimationSphereInterieurBezierS extends TestObjetSub{
 
 	private BezierCubique newBezier(BezierCubique old)
 	

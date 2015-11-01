@@ -2,10 +2,10 @@ package starbuck.tests;
 
 import java.awt.Color;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import info.emptycanvas.library.tribase.TRISphere;
 
-public class TestSphereRot extends TestObjetStub {
+public class TestSphereRot extends TestObjetSub {
 	private TRISphere[] spheres;
 	private Camera c;
 	double a[] ;

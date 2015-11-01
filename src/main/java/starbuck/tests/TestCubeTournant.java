@@ -2,9 +2,9 @@ package starbuck.tests;
 
 import java.awt.Color;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 
-public class TestCubeTournant extends TestObjetStub {
+public class TestCubeTournant extends TestObjetSub {
 	protected Cube c ;
 	private double a = 0;
 	private double f = 5;

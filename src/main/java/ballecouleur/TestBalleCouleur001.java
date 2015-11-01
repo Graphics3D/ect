@@ -3,7 +3,7 @@ package ballecouleur;
 import balleclou.*;
 import info.emptycanvas.library.gdximports.gdx_BSplineCurve;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import info.emptycanvas.library.tribase.TubulaireN;
 import info.emptycanvas.library.tribase.TubulaireN2;
 import java.awt.Color;
@@ -15,7 +15,7 @@ import javax.imageio.ImageIO;
  *
  * @author Se7en
  */
-public class TestBalleCouleur001 extends TestObjetStub {
+public class TestBalleCouleur001 extends TestObjetSub {
 
     public int MAXFRAMES = 2000;
     private BalleClous2 ballec;

@@ -2,14 +2,14 @@ package trihole;
 
 import info.emptycanvas.library.extra.Polyhedre;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import java.awt.Color;
 
 /**
  *
  * @author Se7en
  */
-public class TestTriHole extends TestObjetStub
+public class TestTriHole extends TestObjetSub
 {
     private Polyhedre th;
     private Polyhedre th2;

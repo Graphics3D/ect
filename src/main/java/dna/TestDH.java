@@ -10,14 +10,14 @@ Global license :
 
 package dna;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import java.awt.Color;
 
 /**
  *
  * @author Manuel Dahmen <ibiiztera.it@gmail.com>
  */
-public class TestDH extends TestObjetStub
+public class TestDH extends TestObjetSub
 {
 
     @Override

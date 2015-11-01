@@ -4,7 +4,7 @@
 package dossierimages;
 
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import info.emptycanvas.library.tribase.Plan3D;
 import java.awt.Color;
 import java.io.File;
@@ -13,7 +13,7 @@ import java.io.File;
  *
  * @author Se7en
  */
-public class TestDossier extends TestObjetStub {
+public class TestDossier extends TestObjetSub {
 
     private int[][] coordCube = new int[][]{{-1, -1, -1, 1}, {-1, 1, 1, 1}, {1, 1, 1, -1}, {1, -1, -1, -1}};
     private int[][] coordCube2 = new int[][]{{-1, -1, -1, 1}, {-1, 1, 1, 1}, {1, 1, 1, -1}, {1, -1, -1, -1}};

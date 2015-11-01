@@ -1,8 +1,8 @@
 package starbuck.tests;
 
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 
-public class TestException extends TestObjetStub {
+public class TestException extends TestObjetSub {
 	public void testScene() throws Exception
 	{
 			throw new Exception("Erreur : message :; test");

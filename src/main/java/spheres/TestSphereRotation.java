@@ -15,7 +15,7 @@ package spheres;
 
 import SPhere.TestSphere.Trajectoires;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import info.emptycanvas.library.tribase.TRISphere;
 import java.awt.Color;
 
@@ -23,7 +23,7 @@ import java.awt.Color;
  *
  * @author Manuel Dahmen <ibiiztera.it@gmail.com>
  */
-public class TestSphereRotation extends TestObjetStub
+public class TestSphereRotation extends TestObjetSub
 
 {
 TRISphere ts;

@@ -11,9 +11,9 @@ Global license :
 package trigenerateurabstract.triextrusiongeneralisee;
 
 import info.emptycanvas.library.object.ColorTexture;
-import info.emptycanvas.library.testing.TestObjetStub;
-import static info.emptycanvas.library.testing.TestObjetStub.GENERATE_IMAGE;
-import static info.emptycanvas.library.testing.TestObjetStub.GENERATE_MODEL;
+import info.emptycanvas.library.testing.TestObjetSub;
+import static info.emptycanvas.library.testing.TestObjetSub.GENERATE_IMAGE;
+import static info.emptycanvas.library.testing.TestObjetSub.GENERATE_MODEL;
 import info.emptycanvas.library.tribase.*;
 import java.awt.Color;
 
@@ -21,7 +21,7 @@ import java.awt.Color;
  *
  * @author Manuel Dahmen <manuel.dahmen@gmail.com>
  */
-public class TestTore extends TestObjetStub
+public class TestTore extends TestObjetSub
 {
     @Override
     public void ginit()

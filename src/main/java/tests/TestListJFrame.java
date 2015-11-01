@@ -6,7 +6,7 @@ package tests;
 
 import info.emptycanvas.library.object.*;
 import info.emptycanvas.library.script.Loader;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import java.io.File;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -58,7 +58,7 @@ public class TestListJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButtonRun.setText("Loads and runs class TestObjetStub");
+        jButtonRun.setText("Loads and runs class TestObjetSub");
         jButtonRun.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonRunActionPerformed(evt);
@@ -141,10 +141,10 @@ public class TestListJFrame extends javax.swing.JFrame {
             try
             {
                 Class c = Class.forName(classname);
-                if(TestObjetStub.class.isAssignableFrom(c))
+                if(TestObjetSub.class.isAssignableFrom(c))
                         {
                             Constructor con = c.getConstructor();
-                            final TestObjetStub to = ((TestObjetStub)con.newInstance());
+                            final TestObjetSub to = ((TestObjetSub)con.newInstance());
                             new Thread()
                             {
 
@@ -183,7 +183,7 @@ public class TestListJFrame extends javax.swing.JFrame {
                 )
         {
             Scene sc = new Scene();
-            TestObjetStub to = new TestObjetStub();
+            TestObjetSub to = new TestObjetSub();
             new Loader().loadData(f, sc);
             to.scene(sc);
             to.setFilename(f.getName());

@@ -1,6 +1,6 @@
 
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import info.emptycanvas.library.tribase.*;
 import java.awt.Color;
 
@@ -19,7 +19,7 @@ import java.awt.Color;
  *
  * @author Manuel Dahmen <ibiiztera.it@gmail.com>
  */
-public class TestAxes extends TestObjetStub {
+public class TestAxes extends TestObjetSub {
 
     @Override
     public void testScene() {

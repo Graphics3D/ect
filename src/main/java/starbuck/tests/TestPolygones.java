@@ -5,7 +5,7 @@
 */
 package starbuck.tests;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import java.awt.Color;
 import java.util.ArrayList;
 
@@ -13,7 +13,7 @@ import java.util.ArrayList;
  *
  * @author Manuel DAHMEN
  */
-public class TestPolygones extends TestObjetStub {
+public class TestPolygones extends TestObjetSub {
 
     @Override
     public void testScene() {

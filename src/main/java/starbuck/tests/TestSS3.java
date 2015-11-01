@@ -6,9 +6,9 @@ import java.awt.Color;
 import java.util.HashMap;
 import java.util.Iterator;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import info.emptycanvas.library.tribase.TRISphere;
-public class TestSS3 extends TestObjetStub {
+public class TestSS3 extends TestObjetSub {
 	
 	Bille[] billes =null;
 	Force f = new Force();

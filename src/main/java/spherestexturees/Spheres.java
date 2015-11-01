@@ -4,7 +4,7 @@
  */
 package spherestexturees;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import info.emptycanvas.library.tribase.TRISphere;
 import java.awt.Color;
 
@@ -12,7 +12,7 @@ import java.awt.Color;
  *
  * @author Manuel DAHMEN
  */
-public class Spheres extends TestObjetStub
+public class Spheres extends TestObjetSub
 {
     TRISphere [] s;
     Point3D v[];

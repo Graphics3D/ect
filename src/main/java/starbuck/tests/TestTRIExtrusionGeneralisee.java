@@ -2,12 +2,12 @@ package starbuck.tests;
 
 import java.awt.Color;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import info.emptycanvas.library.tribase.CheminDroite;
 import info.emptycanvas.library.tribase.SurfaceCercle;
 import info.emptycanvas.library.tribase.TRIExtrusionGeneralisee;
 
-public class TestTRIExtrusionGeneralisee extends TestObjetStub{
+public class TestTRIExtrusionGeneralisee extends TestObjetSub{
 
 	public void testScene(){
 		TRIExtrusionGeneralisee te = new TRIExtrusionGeneralisee();

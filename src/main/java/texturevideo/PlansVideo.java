@@ -1,14 +1,14 @@
 package texturevideo;
 
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import info.emptycanvas.library.tribase.Plan3D;
 import java.io.File;
 
 /**
  * @author Dahmen Manuel
  */
-public class PlansVideo extends TestObjetStub
+public class PlansVideo extends TestObjetSub
 {
     private final String avi1;
     private final String avi2;

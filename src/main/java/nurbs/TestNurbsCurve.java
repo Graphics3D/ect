@@ -14,7 +14,7 @@ import info.emptycanvas.library.nurbs.NurbsCurve;
 import info.emptycanvas.library.object.ColorTexture;
 import info.emptycanvas.library.object.Point3D;
 import info.emptycanvas.library.object.SegmentDroite;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import java.awt.Color;
 import java.util.AbstractMap;
 import java.util.Arrays;
@@ -23,7 +23,7 @@ import java.util.Arrays;
  *
  * @author Manuel Dahmen <ibiiztera.it@gmail.com>
  */
-public class TestNurbsCurve extends TestObjetStub
+public class TestNurbsCurve extends TestObjetSub
 {
   @Override
   public void testScene() throws Exception {
@@ -64,7 +64,7 @@ public class TestNurbsCurve extends TestObjetStub
     public static void main(String [] args)
     {
         System.err.println("Circle");
-        TestObjetStub t;
+        TestObjetSub t;
 
         t = new TestNurbsCurve();
         t.setResx(320);

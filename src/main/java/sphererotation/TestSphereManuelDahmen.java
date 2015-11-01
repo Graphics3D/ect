@@ -15,7 +15,7 @@ import info.emptycanvas.library.object.Camera;
 import info.emptycanvas.library.object.ECBufferedImage;
 import info.emptycanvas.library.object.ImageTexture;
 import info.emptycanvas.library.object.Point3D;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import info.emptycanvas.library.tribase.TRISphere;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -26,7 +26,7 @@ import javax.imageio.ImageIO;
  *
  * @author Manuel Dahmen <manuel.dahmen@gmail.com>
  */
-public class TestSphereManuelDahmen extends TestObjetStub
+public class TestSphereManuelDahmen extends TestObjetSub
 {
     double distance = 35;
     double rayon = 10;

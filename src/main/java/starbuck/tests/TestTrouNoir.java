@@ -5,9 +5,9 @@ import info.emptycanvas.library.physics.Bille;
 import java.awt.Color;
 import java.util.Random;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import info.emptycanvas.library.tribase.TRISphere;
-public class TestTrouNoir extends TestObjetStub {
+public class TestTrouNoir extends TestObjetSub {
 	int X = 10;
 	int Y = 10;
 	int Z = 10;

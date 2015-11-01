@@ -10,13 +10,13 @@ Global license :
 
 package spirale;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 
 /**
  *
  * @author Manuel Dahmen <ibiiztera.it@gmail.com>
  */
-public class Spirale extends TestObjetStub
+public class Spirale extends TestObjetSub
 {
     @Override
     public void ginit() {

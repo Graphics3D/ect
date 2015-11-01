@@ -1,7 +1,7 @@
 package ver;
 
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import info.emptycanvas.library.tribase.TubulaireN;
 import java.awt.Color;
 import java.io.File;
@@ -12,7 +12,7 @@ import java.util.HashMap;
  *
  * @author Se7en
  */
-public class Serpentins extends TestObjetStub {
+public class Serpentins extends TestObjetSub {
 
     public int MAXFRAMES = 2000;
     public int Ns = 4;

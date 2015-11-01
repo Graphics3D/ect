@@ -12,7 +12,7 @@
 package coeur;
 
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import java.awt.Color;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -23,7 +23,7 @@ import javax.imageio.ImageIO;
  *
  * @author Manuel Dahmen <ibiiztera.it@gmail.com>
  */
-public class TestCoeur extends TestObjetStub
+public class TestCoeur extends TestObjetSub
 {
 private Coeur coeur;
     @Override

@@ -1,6 +1,6 @@
 package position;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import info.emptycanvas.library.tribase.TRISphere;
 import java.awt.Color;
 
@@ -8,7 +8,7 @@ import java.awt.Color;
  *
  * @author Se7en
  */
-public class TestTRISphere extends TestObjetStub
+public class TestTRISphere extends TestObjetSub
 {
 
     public TestTRISphere() {

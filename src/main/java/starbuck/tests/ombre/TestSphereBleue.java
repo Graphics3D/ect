@@ -3,10 +3,10 @@ package starbuck.tests.ombre;
 import java.awt.Color;
 
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import info.emptycanvas.library.tribase.TRISphere;
 
-public class TestSphereBleue extends TestObjetStub {
+public class TestSphereBleue extends TestObjetSub {
 
 	public class LumiereUtil
 	{
@@ -39,7 +39,7 @@ public class TestSphereBleue extends TestObjetStub {
 
 	@Override
 	public void testScene() {
-		;
+
 
 		scene().clear();
 		

@@ -2,14 +2,14 @@ package balleclou;
 
 import info.emptycanvas.library.extra.BalleClous;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import java.awt.Color;
 
 /**
  *
  * @author Se7en
  */
-public class TestBalleClous11 extends TestObjetStub {
+public class TestBalleClous11 extends TestObjetSub {
 
     public int MAXFRAMES = 2000;
     private ColorTexture tc = new ColorTexture(Color.red);

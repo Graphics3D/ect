@@ -6,9 +6,9 @@ package triangles;
 import java.awt.Color;
 
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 
-public class TestTriangles extends TestObjetStub{
+public class TestTriangles extends TestObjetSub{
 
 	public TestTriangles() {
  	}

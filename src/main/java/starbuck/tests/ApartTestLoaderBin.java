@@ -23,7 +23,7 @@ import info.emptycanvas.library.object.*;
 import info.emptycanvas.library.script.ExtensionFichierIncorrecteException;
 import info.emptycanvas.library.script.Loader;
 import info.emptycanvas.library.script.VersionNonSupporteeException;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import java.awt.Color;
 import java.io.File;
 import java.util.logging.Level;
@@ -33,7 +33,7 @@ import java.util.logging.Logger;
  *
  * @author Atelier
  */
-public class ApartTestLoaderBin extends TestObjetStub {
+public class ApartTestLoaderBin extends TestObjetSub {
 
     @Override
     public void testScene() {

@@ -14,13 +14,13 @@ import balleclou.TestBalleClous111;
 import info.emptycanvas.library.object.Camera;
 import info.emptycanvas.library.object.Point3D;
 import info.emptycanvas.library.object.RepresentableConteneur;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 
 /**
  *
  * @author Manuel Dahmen <ibiiztera.it@gmail.com>
  */
-public class TestFeu extends TestObjetStub {
+public class TestFeu extends TestObjetSub {
 
     @Override
     public void ginit() {

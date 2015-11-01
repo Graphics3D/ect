@@ -9,14 +9,14 @@
 package dna;
 
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import java.awt.Color;
 
 /**
  *
  * @author Manuel Dahmen <ibiiztera.it@gmail.com>
  */
-public class DoubleHelice extends TestObjetStub {
+public class DoubleHelice extends TestObjetSub {
 
     double r1;
     double r2;

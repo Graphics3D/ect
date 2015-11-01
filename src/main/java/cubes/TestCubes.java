@@ -3,7 +3,7 @@
  */
 package cubes;
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +13,7 @@ import java.util.List;
  *
  * @author Se7en
  */
-public class TestCubes extends TestObjetStub{
+public class TestCubes extends TestObjetSub{
 
     @Override
     public void ginit() {

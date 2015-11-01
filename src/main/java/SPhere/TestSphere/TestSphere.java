@@ -14,7 +14,7 @@ import info.emptycanvas.library.object.ColorTexture;
 import info.emptycanvas.library.object.ECBufferedImage;
 import info.emptycanvas.library.object.ImageTexture;
 import info.emptycanvas.library.object.Point3D;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import info.emptycanvas.library.tribase.TRISphere;
 import java.awt.Color;
 import java.io.File;
@@ -27,7 +27,7 @@ import javax.imageio.ImageIO;
  *
  * @author Manuel Dahmen <ibiiztera.it@gmail.com>
  */
-public class TestSphere extends TestObjetStub
+public class TestSphere extends TestObjetSub
 {
     private double longpc[], latpc[], incrpc[][];
     public int size = 10;

@@ -9,7 +9,7 @@
 package portrait;
 
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.TestObjetStub;
+import info.emptycanvas.library.testing.TestObjetSub;
 import info.emptycanvas.library.tribase.TRISphere;
 import java.awt.Color;
 
@@ -17,7 +17,7 @@ import java.awt.Color;
  *
  * @author Manuel Dahmen <ibiiztera.it@gmail.com>
  */
-public class TestPortrait1 extends TestObjetStub {
+public class TestPortrait1 extends TestObjetSub {
 
     @Override
     public void testScene() throws Exception {
