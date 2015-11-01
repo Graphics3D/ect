@@ -53,11 +53,16 @@ public class TestSphereBleue extends TestObjetSub {
 		TRISphere sphere = new TRISphere(Point3D.O0, 10);
 		TRISphere sphereL = new TRISphere(position, 2);
 		TRISphere sphereI = new TRISphere(Point3D.O0, 9);
-		sphere.texture(new TColor(Color.BLUE));
-		sphereI.texture(new TColor(Color.GREEN));
-		sphereL.texture(new TColor(Color.YELLOW));
-		sphere.setMaxX(100);
-		sphere.setMaxY(100);
+
+		TRISphere[] spheres = new TRISphere[] {sphere, sphereL, sphereI};
+
+		for (TRISphere triSphere : spheres) {
+			triSphere.setMaxX(100);
+			triSphere.setMaxY(100);
+		}
+		sphere.texture(new ColorTexture(Color.BLUE));
+		sphereI.texture(new ColorTexture(Color.GREEN));
+		sphereL.texture(new ColorTexture(Color.YELLOW));
 		scene().add(sphere);
 		scene().add(sphereI);
 		scene().add(sphereL);
@@ -69,8 +74,6 @@ public class TestSphereBleue extends TestObjetSub {
 
 	public static void main(String[] args) {
 		TestSphereBleue ts = new TestSphereBleue();
-		ts.setResx(1960);
-		ts.setResy(920);
 		ts.loop(false);
 		ts.setMaxFrames(N*5);
 		ts.publishResult(true);
