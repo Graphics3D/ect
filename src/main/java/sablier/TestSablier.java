@@ -1,13 +1,10 @@
 package sablier;
 
 import info.emptycanvas.library.object.*;
-import info.emptycanvas.library.testing.Test;
-import info.emptycanvas.library.testing.TestInstance;
 import info.emptycanvas.library.testing.TestObjetSub;
 
 import java.awt.*;
-import java.io.File;
-import java.util.ArrayList;
+
 
 /**
  * Created by manue on 01-11-15.
@@ -32,6 +29,8 @@ public class TestSablier extends TestObjetSub
     public static void main(String [ ] args)
     {
 
-        new Thread(new TestSablier()).start();
+        TestSablier target = new TestSablier();
+        target.setGenerate(GENERATE_IMAGE|GENERATE_MODEL|GENERATE_MOVIE);
+        new Thread(target).start();
     }
 }

@@ -14,7 +14,7 @@ public class Sablier extends ParametrizedSurface{
 
     @Override
     public Point3D calculerPoint3D(double u, double v) {
-        return new Point3D(Math.cos(Math.PI*2*(u-0.5)/2), Math.sin(Math.PI*2*(v-0.5)/2), Math.sin(Math.PI*2*(u-0.5)/2) );
+        return new Point3D(Math.cos(Math.PI*2*(u-0.5)*2), Math.sin(Math.PI*2*(v-0.5)*2), Math.sin(Math.PI*2*(u-0.5)*2) );
     }
 
     @Override
