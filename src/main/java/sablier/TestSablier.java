@@ -1,5 +1,6 @@
 package sablier;
 
+import SPhere.TestSphere.Trajectoires;
 import info.emptycanvas.library.object.*;
 import info.emptycanvas.library.testing.TestObjetSub;
 
@@ -16,20 +17,24 @@ public class TestSablier extends TestObjetSub
         this.setMaxFrames(1);
         Sablier s = new Sablier();
         s.texture(new ColorTexture(Color.BLUE));
-        scene().add(new Sablier());
-
-        scene().cameraActive(new Camera(Point3D.Z.mult(-2), Point3D.O0));
+        scene().add(s);
 
     }
-
+    private Point2D cercle()
+    {
+        return Trajectoires.sphere(0.0+1.0*frame/getMaxFrames(),0, 1).get2D();
+    }
     public void testScene()
     {
+        scene().cameraActive(new Camera(cercle().get3D().mult(10), Point3D.O0));
 
     }
     public static void main(String [ ] args)
     {
 
         TestSablier target = new TestSablier();
+        target.loop(true);
+        target.setMaxFrames(600);
         target.setGenerate(GENERATE_IMAGE|GENERATE_MODEL|GENERATE_MOVIE);
         new Thread(target).start();
     }

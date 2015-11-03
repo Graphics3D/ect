@@ -1,10 +1,10 @@
 package sablier;
 
 import info.emptycanvas.library.nurbs.ParametrizedSurface;
+import info.emptycanvas.library.object.ColorTexture;
 import info.emptycanvas.library.object.Point3D;
-import info.emptycanvas.library.testing.TestObjetSub;
-import info.emptycanvas.library.tribase.TRIObjetGenerateurAbstract;
-import info.emptycanvas.library.tribase.TRISphere;
+
+import java.awt.*;
 
 /**
  * Created by manue on 01-11-15.
@@ -12,9 +12,12 @@ import info.emptycanvas.library.tribase.TRISphere;
 
 public class Sablier extends ParametrizedSurface{
 
+    protected double NFAST = 100;
     @Override
     public Point3D calculerPoint3D(double u, double v) {
-        return new Point3D(Math.cos(Math.PI*2*(u-0.5)*2), Math.sin(Math.PI*2*(v-0.5)*2), Math.sin(Math.PI*2*(u-0.5)*2) );
+        Point3D p = new Point3D(Math.cos(Math.PI*2*u), Math.sin(-Math.PI/2+Math.PI*u*v), Math.sin(Math.PI*2*u) );
+        p.texture(this.texture());
+        return p;
     }
 
     @Override
