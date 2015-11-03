@@ -15,7 +15,7 @@ public class Sablier extends ParametrizedSurface{
     protected double NFAST = 100;
     @Override
     public Point3D calculerPoint3D(double u, double v) {
-        Point3D p = new Point3D(Math.cos(Math.PI*2*u), Math.sin(-Math.PI/2+Math.PI*u*v), Math.sin(Math.PI*2*u) );
+        Point3D p = new Point3D(Math.cos(Math.PI*2*u)*Math.sin(Math.PI/2+Math.PI*u), v, Math.sin(Math.PI*2*u)*Math.cos(Math.PI*2*u)*Math.sin(Math.PI/2+Math.PI*u));
         p.texture(this.texture());
         return p;
     }
