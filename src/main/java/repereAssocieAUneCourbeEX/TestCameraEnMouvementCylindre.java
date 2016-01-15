@@ -41,7 +41,7 @@ public class TestCameraEnMouvementCylindre extends TestObjet {
         cam = new CameraInPath(cc);
 
         e = new TRICylindre(10, 20);
-        videoTexture = new VideoTexture("../../../Videos/Beautifull.mp4");
+        videoTexture = new VideoTexture("C:\\Users\\Win\\Videos\\MOV0007A.AVI");
         videoTexture.setTransparent(Color.BLACK);
         e.texture(videoTexture);
         

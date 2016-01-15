@@ -143,5 +143,6 @@
     <orderEntry type="library" name="Maven: xerces:xercesImpl:2.5.0" level="project" />
     <orderEntry type="library" name="Maven: batik:batik-parser:1.6-1" level="project" />
     <orderEntry type="library" name="Maven: batik:batik-awt-util:1.6-1" level="project" />
+    <orderEntry type="library" name="Maven: ch.randelshofer:montemedia:0.7.7" level="project" />
   </component>
 </module>
