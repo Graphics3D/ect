@@ -35,7 +35,7 @@ public class TestRotationsObjets extends TestObjetSub {
     private double globalTimeMillis = 1000;
     private String label;
     private int actionCourante;
-    private int actionsParObjet;
+    private int actionsParObjet = 3;
     private int nFramesParObjet;
     private int objetCourant;
     private int frameDansLObjet;
@@ -44,12 +44,14 @@ public class TestRotationsObjets extends TestObjetSub {
     private double pourcentage;
     private int axe;
     private int frameDansLAction;
+    private int nFramesParAction;
 
     public TestRotationsObjets(double globalTimeMillis) {
         this.globalTimeMillis = globalTimeMillis;
         setMaxFrames((int) (globalTimeMillis * 25.0 / 1000.0));
         System.out.println("Nombre de secondes total de la vidéo : " + globalTimeMillis / 1000.0);
         System.out.println("Nombre de secondes de la vidéo par objet : " + globalTimeMillis / 1000.0 / nObjets);
+        System.out.println("Nombre de secondes de la vidéo par action : " + globalTimeMillis / 1000.0 / nObjets / rotationsParObjets);
         try {
             imageTexture = new ImageTexture(new ECBufferedImage(ImageIO.read(this.getClass().getResourceAsStream("map2.png"))));
         } catch (IOException e) {
@@ -63,7 +65,7 @@ public class TestRotationsObjets extends TestObjetSub {
 
     public static void main(String[] args) {
 
-        int globalTSparObjet = 30000;
+        int globalTSparObjet = 1000;
         TestRotationsObjets ts = new TestRotationsObjets(globalTSparObjet * nObjets);
 
 
@@ -101,9 +103,11 @@ public class TestRotationsObjets extends TestObjetSub {
 
         nFramesParObjet = getMaxFrames() / nObjets;
 
+        nFramesParAction = getMaxFrames() / nObjets / actionsParObjet;
+
         objetCourant = frame() / nFramesParObjet + 1;
 
-        axe = frame() / nFramesParObjet / actionsParObjet;
+        axe = (frame() / nFramesParAction) % 3;
 
 
         actionCourante = nFramesParObjet / objetCourant + 1;
@@ -114,20 +118,22 @@ public class TestRotationsObjets extends TestObjetSub {
 
         nopartielPartielle = frame() - frameDansLObjet * (nObjets - 1 );
 
-        frameDansLAction = frame() - frameDansLObjet * (nObjets - 1 )/3;
+        frameDansLAction = frame() - frameDansLObjet * (nObjets - 1) - nFramesParAction * axe;
+
+
+        ratio = (1.0 * frameDansLAction / nFramesParAction) - 1.0 * frameDansLObjet / nFramesParObjet * nObjets / 3;
+
+        pourcentage = ratio * 100;
     }
 
     public Matrix33 rotation(int axe)
     {
 
-    ratio = frameDansLAction / (double) nFramesParObjet ;
-
-    pourcentage = ratio * 100;
 
 
     double angle = 2 * Math.PI * ratio;
 
-    label = "La rotation autour de l'axe des "+(axe==0?"X":(axe==1?"Y":(axe==3?"Z":"AUCUN AXE CONNU")))+" est effectuée à hauteur de " +
+        label = "La rotation autour de l'axe des " + (axe == 0 ? "X" : (axe == 1 ? "Y" : (axe == 2 ? "Z" : "AUCUN AXE CONNU"))) + " est effectuée à hauteur de " +
             pourcentage + " % (no" + frameDansLAction + "/" + nFramesParObjet;
 
     System.out.println("Frame courante globale = " + frame() + "\nFrame de l'objet : " + nopartielPartielle);
