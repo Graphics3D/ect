@@ -24,9 +24,9 @@ import java.io.IOException;
  * @author Manuel Dahmen <manuel.dahmen@gmail.com>
  */
 public class TestRotationsObjets extends TestObjetSub {
-
     static int nObjets = 1;
-
+    static int rotationsParObjets = 3;
+    protected Representable representable; // l'obserbvé (ou observable, à contrôler
     double distance = 100;
     double dim = 100;
     int maxx = 100;
@@ -34,6 +34,16 @@ public class TestRotationsObjets extends TestObjetSub {
     ImageTexture imageTexture;
     private double globalTimeMillis = 1000;
     private String label;
+    private int actionCourante;
+    private int actionsParObjet;
+    private int nFramesParObjet;
+    private int objetCourant;
+    private int frameDansLObjet;
+    private int nopartielPartielle;
+    private double ratio;
+    private double pourcentage;
+    private int axe;
+    private int frameDansLAction;
 
     public TestRotationsObjets(double globalTimeMillis) {
         this.globalTimeMillis = globalTimeMillis;
@@ -53,7 +63,7 @@ public class TestRotationsObjets extends TestObjetSub {
 
     public static void main(String[] args) {
 
-        int globalTSparObjet = 10000;
+        int globalTSparObjet = 30000;
         TestRotationsObjets ts = new TestRotationsObjets(globalTSparObjet * nObjets);
 
 
@@ -76,39 +86,80 @@ public class TestRotationsObjets extends TestObjetSub {
 
     }
 
+    protected Representable initObjet(int no)
+    {
+        representable = new SegmentDroite(Point3D.Y.mult(-dim), Point3D.Y.mult(dim), new ColorTexture(Color.BLACK));
+
+        scene().add(representable);
+
+        return representable;
+
+    }
+
+    public void calculDeFrames() {
+        actionsParObjet = rotationsParObjets;
+
+        nFramesParObjet = getMaxFrames() / nObjets;
+
+        objetCourant = frame() / nFramesParObjet + 1;
+
+        axe = frame() / nFramesParObjet / actionsParObjet;
+
+
+        actionCourante = nFramesParObjet / objetCourant + 1;
+
+        frameDansLObjet = frame() / nObjets / actionsParObjet;
+
+
+
+        nopartielPartielle = frame() - frameDansLObjet * (nObjets - 1 );
+
+        frameDansLAction = frame() - frameDansLObjet * (nObjets - 1 )/3;
+    }
+
+    public Matrix33 rotation(int axe)
+    {
+
+    ratio = frameDansLAction / (double) nFramesParObjet ;
+
+    pourcentage = ratio * 100;
+
+
+    double angle = 2 * Math.PI * ratio;
+
+    label = "La rotation autour de l'axe des "+(axe==0?"X":(axe==1?"Y":(axe==3?"Z":"AUCUN AXE CONNU")))+" est effectuée à hauteur de " +
+            pourcentage + " % (no" + frameDansLAction + "/" + nFramesParObjet;
+
+    System.out.println("Frame courante globale = " + frame() + "\nFrame de l'objet : " + nopartielPartielle);
+
+    System.out.println(label);
+
+    switch (axe) {
+        case 0:
+            return Matrix33.rotationX(angle);
+        case 1:
+            return Matrix33.rotationY(angle);
+        case 2:
+            return Matrix33.rotationZ(angle);
+        default:
+            System.out.println("Choisir un axe!");
+            System.exit(-1);
+    }
+    return Matrix33.I;
+    }
+
     @Override
     public void testScene() throws Exception {
         scene().clear();
 
-        int nFramesParObjet = getMaxFrames() / nObjets;
+        calculDeFrames();
 
-        int objetCourant = frame() / nFramesParObjet + 1;
+        Matrix33 rot = rotation(axe);
 
-        int frameDansLaPartie = frame() / nObjets;
+        initObjet(objetCourant);
 
-        int nopartielPartielle = frame() - frameDansLaPartie * (nObjets - 1);
-
-
-        double ratio = nopartielPartielle / (double) nFramesParObjet;
-
-        double pourcentage = ratio * 100;
-
-
-        Representable representable = new SegmentDroite(Point3D.Y.mult(-dim), Point3D.Y.mult(dim), new ColorTexture(Color.BLACK));
-
-        scene().add(representable);
-
-
-        double angle = 2 * Math.PI * ratio;
-
-        label = "La rotation autour de l'axe des X est effectuée à hauteur de " + pourcentage + " % (no" + nopartielPartielle + "/" + nFramesParObjet;
-
-        System.out.println("Frame courante globale = " + frame() + "\nFrame de l'objet : " + nopartielPartielle);
-
-        System.out.println(label);
-
+        representable.setRotation(representable.new Rotation(rot, Point3D.O0));
         // Rotation autour de l'axe des X
-        representable.setRotation(representable.new Rotation(Matrix33.rotationX(angle), Point3D.O0));
     }
 
     @Override
@@ -118,4 +169,5 @@ public class TestRotationsObjets extends TestObjetSub {
     @Override
     public void afterRenderFrame() {
     }
+
 }
