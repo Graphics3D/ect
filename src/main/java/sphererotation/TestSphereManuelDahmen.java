@@ -40,15 +40,16 @@ public class TestSphereManuelDahmen extends TestObjetSub
     @Override
     public void ginit() {
         scene().add(tp);
-        scene().cameraActive(new Camera(Point3D.X.mult(distance).plus(Point3D.Y.plus(15)), Point3D.O0));
+        scene().cameraActive(new Camera(Point3D.Z.mult(distance), Point3D.O0));
 
-        tp.setRotation(tp.new Rotation(new Matrix33(new Point3D[] {Point3D.Y, Point3D.X, Point3D.Z}), Point3D.O0));
-
+        //tp.setRotation(tp.new Rotation(new Matrix33(new Point3D[] {Point3D.Z, Point3D.X, Point3D.Y}), Point3D.O0));
         tp.setMaxX(maxx);
         tp.setMaxY(maxy);
         
         try {
-            tp.texture(new ImageTexture(new ECBufferedImage(ImageIO.read(this.getClass().getResourceAsStream("map2.png")))));
+            ImageTexture imageTexture = new ImageTexture(new ECBufferedImage(ImageIO.read(this.getClass().getResourceAsStream("map2.png"))));
+            imageTexture.setColorMask(ITexture.COLOR_MIROR_XY);
+            tp.texture(imageTexture);
         } catch (IOException ex) {
             Logger.getLogger(TestSphereManuelDahmen.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -57,7 +58,7 @@ public class TestSphereManuelDahmen extends TestObjetSub
     @Override
     public void testScene() throws Exception {
         
-        scene().cameraActive().setEye(Matrix33.rot(90/360.0*2*Math.PI, 0).mult(Trajectoires.sphere(1.0*frame()/250, 0, distance)));
+        scene().cameraActive().setEye(Matrix33.rot(90/360.0*2*Math.PI, 0).mult(Trajectoires.sphere(0, 1.0*frame()/250, distance)));
         
     }
 
