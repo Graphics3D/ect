@@ -21,10 +21,12 @@ import java.io.IOException;
  * cette classe produit une image de sphère avec "Manuel Dahmen" écrit dessus. La sphère tourne
  * puis s'en va et revient à l'écran.
  *
- *
  * @author Manuel Dahmen <manuel.dahmen@gmail.com>
  */
 public class TestRotationsObjets extends TestObjetSub {
+
+    static int nObjets = 1;
+
     double distance = 100;
     double dim = 100;
     int maxx = 100;
@@ -35,7 +37,9 @@ public class TestRotationsObjets extends TestObjetSub {
 
     public TestRotationsObjets(double globalTimeMillis) {
         this.globalTimeMillis = globalTimeMillis;
-
+        setMaxFrames((int) (globalTimeMillis * 25.0 / 1000.0));
+        System.out.println("Nombre de secondes total de la vidéo : " + globalTimeMillis / 1000.0);
+        System.out.println("Nombre de secondes de la vidéo par objet : " + globalTimeMillis / 1000.0 / nObjets);
         try {
             imageTexture = new ImageTexture(new ECBufferedImage(ImageIO.read(this.getClass().getResourceAsStream("map2.png"))));
         } catch (IOException e) {
@@ -49,8 +53,8 @@ public class TestRotationsObjets extends TestObjetSub {
 
     public static void main(String[] args) {
 
-        int globalTS = 100000;
-        TestRotationsObjets ts = new TestRotationsObjets(globalTS);
+        int globalTSparObjet = 10000;
+        TestRotationsObjets ts = new TestRotationsObjets(globalTSparObjet * nObjets);
 
 
         // Seules images et films dans un premier temps
@@ -58,7 +62,6 @@ public class TestRotationsObjets extends TestObjetSub {
 
         ts.loop(true);
 
-        ts.setMaxFrames(globalTS * 250 / 100000);
 
         new Thread(ts).start();
     }
@@ -77,23 +80,30 @@ public class TestRotationsObjets extends TestObjetSub {
     public void testScene() throws Exception {
         scene().clear();
 
-        int nObjets = 1;
         int nFramesParObjet = getMaxFrames() / nObjets;
 
-        int objetCourant = frame() / nFramesParObjet / nObjets;
+        int objetCourant = frame() / nFramesParObjet + 1;
 
-        int frameDansLaPartie = frame() / nObjets % nFramesParObjet;
+        int frameDansLaPartie = frame() / nObjets;
 
-        double pourcentage = frameDansLaPartie / (double) nFramesParObjet;
+        int nopartielPartielle = frame() - frameDansLaPartie * (nObjets - 1);
+
+
+        double ratio = nopartielPartielle / (double) nFramesParObjet;
+
+        double pourcentage = ratio * 100;
+
 
         Representable representable = new SegmentDroite(Point3D.Y.mult(-dim), Point3D.Y.mult(dim), new ColorTexture(Color.BLACK));
 
         scene().add(representable);
 
 
-        double angle = 2 * Math.PI / 3600 * pourcentage;
+        double angle = 2 * Math.PI * ratio;
 
-        label = "Rotation autour de l'axe des X de " + angle + " radians";
+        label = "La rotation autour de l'axe des X est effectuée à hauteur de " + pourcentage + " % (no" + nopartielPartielle + "/" + nFramesParObjet;
+
+        System.out.println("Frame courante globale = " + frame() + "\nFrame de l'objet : " + nopartielPartielle);
 
         System.out.println(label);
 
