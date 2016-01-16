@@ -11,10 +11,7 @@ Global license :
 package sphererotation;
 
 import SPhere.TestSphere.Trajectoires;
-import info.emptycanvas.library.object.Camera;
-import info.emptycanvas.library.object.ECBufferedImage;
-import info.emptycanvas.library.object.ImageTexture;
-import info.emptycanvas.library.object.Point3D;
+import info.emptycanvas.library.object.*;
 import info.emptycanvas.library.testing.TestObjet;
 import info.emptycanvas.library.testing.TestObjetSub;
 import info.emptycanvas.library.tribase.TRISphere;
@@ -36,11 +33,17 @@ public class TestSphereManuelDahmen extends TestObjetSub
     double rayon = 10;
     int maxx=100; int maxy=100;
     TRISphere tp = new TRISphere(Point3D.O0, rayon);
+
+
+
+
     @Override
     public void ginit() {
         scene().add(tp);
         scene().cameraActive(new Camera(Point3D.X.mult(distance).plus(Point3D.Y.plus(15)), Point3D.O0));
-        
+
+        tp.setRotation(tp.new Rotation(new Matrix33(new Point3D[] {Point3D.Y, Point3D.X, Point3D.Z}), Point3D.O0));
+
         tp.setMaxX(maxx);
         tp.setMaxY(maxy);
         
@@ -54,7 +57,7 @@ public class TestSphereManuelDahmen extends TestObjetSub
     @Override
     public void testScene() throws Exception {
         
-        scene().cameraActive().setEye(Trajectoires.sphere(1.0*frame()/250, 0, distance));
+        scene().cameraActive().setEye(Matrix33.rot(90/360.0*2*Math.PI, 0).mult(Trajectoires.sphere(1.0*frame()/250, 0, distance)));
         
     }
 
