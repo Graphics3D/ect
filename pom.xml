@@ -7,7 +7,7 @@
     <name>Emptycanvas Tests and Demo Package</name>
     <groupId>info.emptycanvas</groupId>
     <artifactId>ect</artifactId>
-    <version>37</version>
+    <version>35</version>
     <packaging>jar</packaging>
     <distributionManagement>
         <repository>
@@ -44,7 +44,7 @@
         <testSourceDirectory>${basedir}/src/test/java</testSourceDirectory>
         <outputDirectory>${basedir}/target/classes</outputDirectory>
         <testOutputDirectory>${basedir}/target/test-classes</testOutputDirectory>
-		
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -61,11 +61,11 @@
                             <mode>development</mode>
                             <url>${pom.url}</url>
                         </manifestEntries>
-         
+
                     </archive>
                 </configuration>
             </plugin>
-	 
+
             <plugin>
                 <artifactId>maven-resources-plugin</artifactId>
                 <version>2.6</version>
@@ -79,13 +79,13 @@
                         </goals>
                         <configuration>
                             <outputDirectory>${basedir}/target/classes</outputDirectory>
-                            <resources>          
+                            <resources>
                                 <resource>
                                     <directory>${basedir}/src/main/java</directory>
                                     <filtering>true</filtering>
                                 </resource>
-                            </resources>              
-                        </configuration>            
+                            </resources>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
@@ -94,6 +94,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.3.2</version>
                 <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
                     <showDeprecation>true</showDeprecation>
                 </configuration>
             </plugin>
@@ -112,7 +114,7 @@
         <profile>
         </profile>
     </profiles>
-	
+
     <repositories>
 
         <repository>
@@ -138,7 +140,7 @@
         <dependency>
             <groupId>info.emptycanvas</groupId>
             <artifactId>empty3</artifactId>
-            <version>1.53</version>
+            <version>1.55</version>
             <type>jar</type>
         </dependency>
 
