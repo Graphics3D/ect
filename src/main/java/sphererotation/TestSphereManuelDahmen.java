@@ -15,6 +15,7 @@ import info.emptycanvas.library.object.Camera;
 import info.emptycanvas.library.object.ECBufferedImage;
 import info.emptycanvas.library.object.ImageTexture;
 import info.emptycanvas.library.object.Point3D;
+import info.emptycanvas.library.testing.TestObjet;
 import info.emptycanvas.library.testing.TestObjetSub;
 import info.emptycanvas.library.tribase.TRISphere;
 import java.io.IOException;
@@ -23,6 +24,9 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 
 /**
+ * cette classe produit une image de sphère avec "Manuel Dahmen" écrit dessus. La sphère tourne
+ * puis s'en va et revient à l'écran.
+ *
  *
  * @author Manuel Dahmen <manuel.dahmen@gmail.com>
  */
@@ -35,13 +39,13 @@ public class TestSphereManuelDahmen extends TestObjetSub
     @Override
     public void ginit() {
         scene().add(tp);
-        scene().cameraActive(new Camera(Point3D.X.mult(distance), Point3D.O0));
+        scene().cameraActive(new Camera(Point3D.X.mult(distance).plus(Point3D.Y.plus(15)), Point3D.O0));
         
         tp.setMaxX(maxx);
         tp.setMaxY(maxy);
         
         try {
-            tp.texture(new ImageTexture(new ECBufferedImage(ImageIO.read(this.getClass().getResourceAsStream("map.png")))));
+            tp.texture(new ImageTexture(new ECBufferedImage(ImageIO.read(this.getClass().getResourceAsStream("map2.png")))));
         } catch (IOException ex) {
             Logger.getLogger(TestSphereManuelDahmen.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -58,7 +62,9 @@ public class TestSphereManuelDahmen extends TestObjetSub
     {
         
         TestSphereManuelDahmen ts = new TestSphereManuelDahmen();
-        
+
+        ts.setGenerate(TestObjet.GENERATE_IMAGE|GENERATE_MOVIE);
+
         ts.loop(true);
         
         ts.setMaxFrames(500);
@@ -68,6 +74,5 @@ public class TestSphereManuelDahmen extends TestObjetSub
 
     @Override
     public void finit() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
