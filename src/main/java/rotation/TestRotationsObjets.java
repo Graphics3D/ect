@@ -12,6 +12,7 @@ package rotation;
 import info.emptycanvas.library.object.*;
 import info.emptycanvas.library.testing.TestObjet;
 import info.emptycanvas.library.testing.TestObjetSub;
+import info.emptycanvas.library.tribase.TRISphere;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -24,7 +25,7 @@ import java.io.IOException;
  * @author Manuel Dahmen <manuel.dahmen@gmail.com>
  */
 public class TestRotationsObjets extends TestObjetSub {
-    static int nObjets = 1;
+    static int nObjets = 2;
     static int rotationsParObjets = 3;
     protected Representable representable; // l'obserbvé (ou observable, à contrôler
     double distance = 100;
@@ -65,7 +66,7 @@ public class TestRotationsObjets extends TestObjetSub {
 
     public static void main(String[] args) {
 
-        int globalTSparObjet = 10000;
+        int globalTSparObjet = 100000;
         TestRotationsObjets ts = new TestRotationsObjets(globalTSparObjet * nObjets);
 
 
@@ -90,12 +91,21 @@ public class TestRotationsObjets extends TestObjetSub {
 
     protected Representable initObjet(int no)
     {
-        representable = new SegmentDroite(Point3D.Y.mult(-dim), Point3D.Y.mult(dim), new ColorTexture(Color.BLACK));
+        switch (no) {
+            case 0:
+                representable = new SegmentDroite(Point3D.Y.mult(-dim), Point3D.Y.mult(dim), new ColorTexture(Color.BLACK));
 
-        scene().add(representable);
+                scene().add(representable);
 
+                return representable;
+            case 1:
+                representable = new TRISphere(Point3D.O0, dim);
+                representable.texture();
+                scene().add(representable);
+                return representable;
+
+        }
         return representable;
-
     }
 
     public void calculDeFrames() {
