@@ -20,18 +20,18 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Horloge extends JFrame{
+    private final JLabel label;
     Configuration c = new Configuration();
     Color h;
     Color m;
     Color s;
     Dimension res;
+    Scene sc;
     private boolean montre = true;
     private TRISphere s0;
     private TRISphere sH;
     private TRISphere sS;
     private TRISphere sM;
-    Scene sc;
-    private final JLabel label;
 
     public Horloge(Color h, Color m, Color s) {
         super("Horloge 3D");
@@ -76,6 +76,12 @@ public class Horloge extends JFrame{
 
     }
 
+    public static void main(String[] args) {
+
+        Horloge h = new Horloge(null, null, null);
+        h.montrer();
+    }
+
     public void initTime() {
         double f = 2 * Math.PI;
 
@@ -97,7 +103,7 @@ public class Horloge extends JFrame{
         TRISphere sG6 = new TRISphere(position(f*6.0 / 12)
                 .mult(80), 10);
         TRISphere sG9 = new TRISphere(position(f*9.0/ 12)
-                .mult(80), 10);   
+                .mult(80), 10);
         sG0.texture(new ColorTexture(Color.GREEN));
         sG3.texture(new ColorTexture(Color.GREEN));
         sG6.texture(new ColorTexture(Color.GREEN));
@@ -125,9 +131,13 @@ public class Horloge extends JFrame{
                                     ImageIO.read(new File("c:\\Emptycanvas\\textures\\paillettes.jpg")))));
 
         } catch (IOException ex) {
+            s0.texture(new ColorTexture(Color.RED));
+            sH.texture(new ColorTexture(Color.GREEN));
+            sM.texture(new ColorTexture(Color.BLUE));
+            sS.texture(new ColorTexture(Color.YELLOW));
             Logger.getLogger(Horloge.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         for(int i=0; i<12; i++)
         {
             TRISphere sGm = new TRISphere(position(f * i / 12)
@@ -171,32 +181,26 @@ public class Horloge extends JFrame{
     public void montrer() {
         initTime();
 
-        
+
 
         while (montre) {
 
         ZBuffer z = ZBufferFactory.instance(
-                (int) this.getWidth(),
-                (int) this.getHeight());
+                this.getWidth(),
+                this.getHeight());
             time();
             z.suivante();
             z.couleurDeFond(new ColorTexture(Color.WHITE));
             z.scene(sc);
             z.dessinerSilhouette3D();
 
-            Image bi = ((ZBufferImpl) z).image();
+            Image bi = z.image();
             try
             {
-            label.getGraphics().drawImage(bi, 0, 0, (int) this.getWidth(), (int) this.getHeight(), null);
+                label.getGraphics().drawImage(bi, 0, 0, this.getWidth(), this.getHeight(), null);
             }
             catch(Exception ex){}
         }
-    }
-
-    public static void main(String[] args) {
-       
-        Horloge h = new Horloge(null, null, null);
-        h.montrer();
     }
 
     /**
