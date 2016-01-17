@@ -44,9 +44,5 @@ public class TestCollineIsometrique extends TestObjetSub {
     @Override
     public void testScene() {
         scene().add(new CollineModele1(40));
-        scene().add(new CollineModele1(40));
-        scene().add(new CollineModele1(40));
-        scene().add(new CollineModele1(40));
-        description("Rorschah-like object");
     }
 }
