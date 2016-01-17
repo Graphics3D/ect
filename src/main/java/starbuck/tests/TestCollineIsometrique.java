@@ -29,16 +29,12 @@ import info.emptycanvas.library.testing.TestObjetSub;
 public class TestCollineIsometrique extends TestObjetSub {
 
     public static void main(String[] args) {
-        for (int i = 0; i < 100; i++) {
             TestCollineIsometrique to = new TestCollineIsometrique();
             to.isometrique(true);
             to.publishResult(true);
-            to.setFilename("image_" + i);
-            to.run();
-            
-            to = null;
+        to.setMaxFrames(6000);
+        new Thread(to).start();
             System.gc();
-        }
     }
 
     @Override
