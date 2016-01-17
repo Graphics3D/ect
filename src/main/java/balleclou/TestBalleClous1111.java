@@ -2,7 +2,8 @@ package balleclou;
 
 import info.emptycanvas.library.object.*;
 import info.emptycanvas.library.testing.TestObjetSub;
-import java.awt.Color;
+
+import java.awt.*;
 
 /**
  *
@@ -11,26 +12,37 @@ import java.awt.Color;
 public class TestBalleClous1111 extends TestObjetSub {
 
     public int MAXFRAMES = 2000;
+    public int N = 2;
     private ITexture tc = new ColorTexture(Color.red);
     private BalleClous2 ballec;
     private Point3D[] s;
-    public int N = 2;
     private Point3D[] v;
     private double V = 0.03;
     private double D = 1;
     private VideoTexture videoTexture;
 
+    public static void main(String[] args) {
+        TestBalleClous1111 th = new TestBalleClous1111();
+
+        th.loop(true);
+
+        th.MAXFRAMES = 20000;
+
+        th.setGenerate(GENERATE_IMAGE | GENERATE_MOVIE);
+
+        th.run();
+    }
 
     @Override
     public void ginit() {
         LumierePonctuelle lumierePonctuelle = new LumierePonctuelle(Point3D.X,Color.RED);
         lumierePonctuelle.setR0(1);
-        
+
         scene().lumieres().add(lumierePonctuelle);
-        
+
         lumierePonctuelle = new LumierePonctuelle(Point3D.Y,Color.BLUE);
         lumierePonctuelle.setR0(1);
-        
+
         scene().lumieres().add(lumierePonctuelle);
 
         s = new Point3D[N];
@@ -51,9 +63,9 @@ public class TestBalleClous1111 extends TestObjetSub {
 
         ballec = new BalleClous2(Point3D.O0, 1);
 
-  
+
         ballec.texture(new ColorTexture(Color.WHITE));
-        videoTexture = new VideoTexture("C:\\Users\\manue\\Videos\\Beautifull.mp4");
+        videoTexture = new VideoTexture("C:\\Emptycanvas\\Videos\\MOV0010A.AVI");
         videoTexture.setTransparent(Color.BLACK);
         ballec.texture(videoTexture);
         scene().add(ballec);
@@ -67,10 +79,11 @@ public class TestBalleClous1111 extends TestObjetSub {
         scene().cameraActive(camera);
 
     }
+
     public void bounce(int i) {
         s[i] = s[i].plus(v[i]);
 
-        
+
         if (s[i].getX() > D && v[i].getX() > 0) {
             v[i].setX(-v[i].getX());
         }
@@ -114,28 +127,16 @@ public class TestBalleClous1111 extends TestObjetSub {
             if (s[j].getY() > D) {
                 s[j].setY(s[j].getY() - D);
             }
-     
+
             totalA += s[j].getX();
             totalB += s[j].getY();
-            
+
             ballec.addPoint(new Point2D(s[j].getX(), s[j].getY()));
-            
+
             ballec.position().rotation = ballec.position().rotation.mult(matrix1(totalA, totalB));
         }
 
 
-    }
-
-    public static void main(String[] args) {
-        TestBalleClous1111 th = new TestBalleClous1111();
-
-        th.loop(true);
-
-        th.MAXFRAMES = 20000;
-
-        th.setGenerate(GENERATE_IMAGE | GENERATE_MOVIE);
-
-        th.run();
     }
 
     private Matrix33 matrix1(double a, double b) {
