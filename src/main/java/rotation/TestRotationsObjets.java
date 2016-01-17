@@ -28,7 +28,7 @@ public class TestRotationsObjets extends TestObjetSub {
     static int nObjets = 2;
     static int rotationsParObjets = 3;
     protected Representable representable; // l'obserbvé (ou observable, à contrôler
-    double distance = 100;
+    double distance = 300;
     double dim = 100;
     int maxx = 100;
     int maxy = 100;
