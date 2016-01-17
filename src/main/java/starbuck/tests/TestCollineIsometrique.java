@@ -18,8 +18,8 @@
 
  */
 package starbuck.tests;
+
 import info.emptycanvas.library.extra.CollineModele1;
-import info.emptycanvas.library.object.*;
 import info.emptycanvas.library.testing.TestObjetSub;
 
 /**
@@ -31,10 +31,8 @@ public class TestCollineIsometrique extends TestObjetSub {
     public static void main(String[] args) {
         for (int i = 0; i < 100; i++) {
             TestCollineIsometrique to = new TestCollineIsometrique();
-            to.setResx(640);
-            to.setResy(480);
             to.isometrique(true);
-            to.publishResult(false);
+            to.publishResult(true);
             to.setFilename("image_" + i);
             to.run();
             
