@@ -35,7 +35,7 @@ public class SpheresPA extends PaintingAct {
             for (int i = 0; i < s[0].length; i++) {
                 TRISphere s2 = new TRISphere(sph.calculerPoint3D(s[0][i], s[1][i]), 2);
                 s2.texture(new ColorTexture(Color.BLUE));
-                getZBuffer().dessinerSilhouette3D(s2);
+                getZBuffer().dessinerSilhouette3D(s2, null);
             }
         }
     }

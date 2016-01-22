@@ -1,33 +1,45 @@
 package ballecouleur;
 
-import balleclou.*;
+import balleclou.BalleClous2;
 import info.emptycanvas.library.gdximports.gdx_BSplineCurve;
 import info.emptycanvas.library.object.*;
 import info.emptycanvas.library.testing.TestObjetSub;
-import info.emptycanvas.library.tribase.TubulaireN;
 import info.emptycanvas.library.tribase.TubulaireN2;
-import java.awt.Color;
+
+import javax.imageio.ImageIO;
+import java.awt.*;
 import java.io.File;
 import java.util.HashMap;
-import javax.imageio.ImageIO;
 
 /**
  *
- * @author Se7en
+ * @author Manuel Dahmen
+ * Doesn't work
  */
 public class TestBalleCouleur001 extends TestObjetSub {
 
     public int MAXFRAMES = 2000;
-    private BalleClous2 ballec;
-    private Point3D[] s;
     public int N = 7;
     public int Ncolors = 6;
+    private BalleClous2 ballec;
+    private Point3D[] s;
     private Point3D[] v;
     private double V = 0.08;
     private double D = 1.0;
-    private double ballecparam = 0.02;
+    private double ballecparam = 0.2;
     private double TUBE_RAYON = 0.02;
     private HashMap<Point2D, Color> map = new HashMap<Point2D, Color>();
+
+    public static void main(String[] args) {
+        TestBalleCouleur001 th = new TestBalleCouleur001();
+
+        th.loop(true);
+
+
+        th.setGenerate(GENERATE_IMAGE | GENERATE_MOVIE);
+
+        th.run();
+    }
 
     @Override
     public void ginit() {
@@ -53,16 +65,16 @@ public class TestBalleCouleur001 extends TestObjetSub {
             v[i] = new Point3D(Math.random() * (V / 2 - V), Math.random() * (V / 2 - V), Math.random() * (V / 2 - V));
 
         }
-        
+
 
         ballec = new BalleClous2(Point3D.O0, 1);
 
         ballec.setMaxX(100);
         ballec.setMaxY(100);
-        
+
         ballec.param(ballecparam);
-        
-        
+
+
         ballec.texture(new ColorTexture(Color.GRAY));
 
         scene().add(ballec);
@@ -102,9 +114,9 @@ public class TestBalleCouleur001 extends TestObjetSub {
 
     @Override
     public void testScene() throws Exception {
-  
+
         scene().clear();
-        
+
         for (int i = 0; i < s.length; i++) {
             bounce(i);
         }
@@ -131,37 +143,26 @@ public class TestBalleCouleur001 extends TestObjetSub {
             totalB += s[j].getY();
 
             scene().add(s[j]);//?
-            
+
             ballec.addPoint(new Point2D(s[j].getX(), s[j].getY()));
 
             TubulaireN2<gdx_BSplineCurve> tubulaireN2 = new TubulaireN2<gdx_BSplineCurve>();
             tubulaireN2.diam((float)TUBE_RAYON);
-            tubulaireN2.texture(new ImageTexture(new ECBufferedImage(ImageIO.read(new File("C:\\Users\\Se7en\\Pictures\\manu2.jpg")))));
-            
+            tubulaireN2.texture(new ImageTexture(new ECBufferedImage(ImageIO.read(new File("C:\\EmptyCanvas\\Images\\PHOTO-NU.png")))));
+
             gdx_BSplineCurve gdx_BSplineCurve = new gdx_BSplineCurve();
-            
+
             gdx_BSplineCurve.instantiate(s, 5);
-            
-            
+
+
             tubulaireN2.curve(gdx_BSplineCurve);
-            
+
             scene().add(tubulaireN2);
-            
+
 //ballec.position().rotation = ballec.position().rotation.mult(matrix1(totalA, totalB));
 
         }
 
-    }
-
-    public static void main(String[] args) {
-        TestBalleCouleur001 th = new TestBalleCouleur001();
-
-        th.loop(true);
-
-        
-        th.setGenerate(GENERATE_IMAGE|GENERATE_MOVIE);
-
-        th.run();
     }
 
     private Matrix33 matrix1(double a, double b) {

@@ -66,7 +66,7 @@ public class TestRotationsObjets extends TestObjetSub {
 
     public static void main(String[] args) {
 
-        int globalTSparObjet = 100000;
+        int globalTSparObjet = 10000;
         TestRotationsObjets ts = new TestRotationsObjets(globalTSparObjet * nObjets);
 
 
