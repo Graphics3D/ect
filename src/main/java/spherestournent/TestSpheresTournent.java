@@ -19,6 +19,8 @@ public class TestSpheresTournent extends TestObjetSub {
         TestSpheresTournent ts = new TestSpheresTournent();
 
         ts.setMaxFrames(3000);
+
+        new Thread(ts).start();
     }
 
     public void ginit() {
@@ -46,8 +48,11 @@ public class TestSpheresTournent extends TestObjetSub {
         if (frame < getMaxFrames() / 3) {
             i = 1;
         }
+        double pc;
 
-        matrix = matricess[i % 3].pourcents(matricess[(i + 1) % 3], (frame() / (frame() % 3)) / (frame() / 3));
+        if (frame == 0 || frame / 3. == 0 || frame % 3 == 0) pc = 0.01;
+        else pc = (frame() * 1. / (frame() % 3.)) / (frame() / 3.);
+        matrix = matricess[i % 3].pourcents(matricess[(i + 1) % 3], pc);
 
         for (i = 0; i < sps.length; i++) {
             sps[i].setRotation(new Rotation(matrix, Point3D.O0));
