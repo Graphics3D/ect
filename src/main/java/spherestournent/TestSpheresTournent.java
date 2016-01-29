@@ -24,17 +24,16 @@ public class TestSpheresTournent extends TestObjetSub {
     }
 
     public void ginit() {
-        sps = new TRISphere[12];
+        sps = new TRISphere[1];
 
         int i = 0;
-        for (TRISphere sp : sps) {
-            sp = new TRISphere(Point3D.X.mult(i), 1);
+        for (i = 0; i < sps.length; i++) {
+            sps[i] = new TRISphere(Point3D.X.mult(i), 1);
 
-            sp.texture(new ColorTexture(Color.blue));
-            i++;
+            sps[i].texture(new ColorTexture(Color.blue));
         }
 
-        camera(new Camera(Point3D.Z.mult(-15), Point3D.O0));
+        camera(new Camera(Point3D.Z.mult(-sps.length), Point3D.O0));
     }
 
     public void testScene() {
